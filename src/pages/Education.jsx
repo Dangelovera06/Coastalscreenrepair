@@ -137,7 +137,7 @@ export default function Education() {
       {/* Content Start Marker */}
       <div id="content-start" />
 
-      {/* What You'll Learn Section */}
+      {/* The Non-Negotiables Section */}
       <section className="py-16 border-y border-white/5 bg-white/[0.02]">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div
@@ -147,15 +147,15 @@ export default function Education() {
             viewport={{ once: true }}
             className="text-center mb-10"
           >
-            <h3 className="text-xl sm:text-2xl font-semibold text-white/80 mb-2">What You'll Learn</h3>
-            <p className="text-white/40">The complete breakdown of a system that works</p>
+            <h3 className="text-xl sm:text-2xl font-semibold text-white/80 mb-2">There's No Secret. No One Is Hiding It From You.</h3>
+            <p className="text-white/40">These are the non-negotiables — you either implement them or stay stuck.</p>
           </motion.div>
           <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
             {[
-              { icon: Target, label: "Local Domination Strategy" },
-              { icon: Video, label: "Cinematic Content Principles" },
-              { icon: BarChart3, label: "Ad Framework That Converts" },
-              { icon: Calendar, label: "Automated Booking Systems" }
+              { icon: Target, label: "Own Your Local Market" },
+              { icon: Video, label: "Content That Stops The Scroll" },
+              { icon: BarChart3, label: "Ads That Actually Convert" },
+              { icon: Calendar, label: "A System That Books For You" }
             ].map((item, i) => (
               <motion.div
                 key={i}
