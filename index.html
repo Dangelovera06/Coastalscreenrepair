@@ -87,5 +87,15 @@
       <input type="email" name="email" />
       <input type="tel" name="phone" />
     </form>
+    
+    <!-- Hidden Netlify Form for Education Opt-in -->
+    <form name="education-optin" method="POST" data-netlify="true" netlify-honeypot="bot-field" hidden>
+      <input type="hidden" name="form-name" value="education-optin" />
+      <input name="bot-field" />
+      <input type="text" name="name" />
+      <input type="email" name="email" />
+      <input type="tel" name="phone" />
+      <input type="text" name="submittedAt" />
+    </form>
   </body>
 </html>

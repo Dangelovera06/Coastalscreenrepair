@@ -53,7 +53,7 @@ export default function SocialProof() {
           </div>
           
           <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold mb-4 text-white">
-            Clinics Already Filling Their Calendars
+            Businesses Already Getting Booked Out With This System
           </h2>
           <p className="text-base sm:text-lg md:text-xl text-white/70">
             Real businesses getting real results with this system

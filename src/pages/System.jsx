@@ -7,6 +7,7 @@ import WhatYouGet from "../components/landing/offer/WhatYouGet";
 import WhatHappens from "../components/landing/offer/WhatHappens";
 import FinalClose from "../components/landing/offer/FinalClose";
 import DecemberLeadQuiz from "../components/landing/offer/DecemberLeadQuiz";
+import SocialProof from "../components/landing/offer/SocialProof";
 
 export default function System() {
   const [isQuizOpen, setIsQuizOpen] = useState(false);
@@ -150,6 +151,7 @@ export default function System() {
         </div>
       </section>
 
+      <SocialProof />
       <Testimonials />
       <WhatYouGet onCTAClick={handleCTAClick} ctaText="Build My System" />
       <WhatHappens />
