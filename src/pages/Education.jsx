@@ -1,6 +1,6 @@
-import React from "react";
-import { motion } from "framer-motion";
-import { CheckCircle, ArrowDown, Target, Zap, Calendar, Video, BarChart3, Users, Star, ChevronDown, BookOpen, Lightbulb, TrendingUp } from "lucide-react";
+import React, { useState } from "react";
+import { motion, AnimatePresence } from "framer-motion";
+import { CheckCircle, ArrowDown, Target, Zap, Calendar, Video, BarChart3, Users, Star, ChevronDown, BookOpen, Lightbulb, TrendingUp, Gift, FileText, Play, ArrowRight } from "lucide-react";
 
 const CALENDLY_LINK = "https://calendly.com/p1creative/30min";
 
@@ -26,8 +26,64 @@ const reviews = [
 ];
 
 export default function Education() {
+  const [formData, setFormData] = useState({ name: '', email: '', phone: '' });
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [isSubmitted, setIsSubmitted] = useState(false);
+  const [errors, setErrors] = useState({});
+
   const scrollToContent = () => {
     document.getElementById('content-start')?.scrollIntoView({ behavior: 'smooth' });
+  };
+
+  const handleInputChange = (field, value) => {
+    setFormData(prev => ({ ...prev, [field]: value }));
+    if (errors[field]) setErrors(prev => ({ ...prev, [field]: '' }));
+  };
+
+  const validateForm = () => {
+    const newErrors = {};
+    if (!formData.name.trim()) newErrors.name = 'Required';
+    if (!formData.email.trim()) newErrors.email = 'Required';
+    else if (!/\S+@\S+\.\S+/.test(formData.email)) newErrors.email = 'Invalid email';
+    if (!formData.phone.trim()) newErrors.phone = 'Required';
+    setErrors(newErrors);
+    return Object.keys(newErrors).length === 0;
+  };
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    if (!validateForm()) return;
+    setIsSubmitting(true);
+
+    try {
+      if (window.fbq) {
+        window.fbq('track', 'Lead', {
+          content_name: 'Education Guide Access',
+          content_category: 'Education Opt-in'
+        });
+      }
+
+      const submissionData = new URLSearchParams({
+        'form-name': 'education-optin',
+        name: formData.name,
+        email: formData.email,
+        phone: formData.phone,
+        submittedAt: new Date().toISOString()
+      });
+
+      await fetch('/', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+        body: submissionData.toString()
+      });
+
+      setIsSubmitted(true);
+    } catch (error) {
+      console.error('Submission error:', error);
+      setIsSubmitted(true);
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   return (
@@ -173,8 +229,163 @@ export default function Education() {
         </div>
       </section>
 
-      {/* Section 1: Local Domination */}
+      {/* Opt-In Section */}
       <section className="py-20 sm:py-28 relative">
+        <div className="absolute inset-0 bg-gradient-to-b from-[#006eff]/10 via-[#006eff]/5 to-transparent pointer-events-none" />
+        <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="grid lg:grid-cols-2 gap-12 items-center">
+            {/* Left side - Message */}
+            <motion.div
+              initial={{ opacity: 0, x: -30 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.6 }}
+              viewport={{ once: true }}
+            >
+              <h2 className="text-3xl sm:text-4xl font-bold text-white mb-6">
+                Here's Everything You Need to Know
+              </h2>
+              <p className="text-lg text-white/60 mb-8">
+                Drop your info below and we'll send this full guide straight to your inbox — plus some bonus content you won't find anywhere else.
+              </p>
+              
+              {/* Bonus Content List */}
+              <div className="space-y-4">
+                <div className="flex items-center gap-3 text-white/70">
+                  <div className="w-10 h-10 bg-[#006eff]/20 rounded-lg flex items-center justify-center flex-shrink-0">
+                    <FileText className="w-5 h-5 text-[#006eff]" />
+                  </div>
+                  <div>
+                    <p className="font-medium text-white">The Full Blueprint PDF</p>
+                    <p className="text-sm text-white/50">Complete guide you can reference anytime</p>
+                  </div>
+                </div>
+                <div className="flex items-center gap-3 text-white/70">
+                  <div className="w-10 h-10 bg-[#006eff]/20 rounded-lg flex items-center justify-center flex-shrink-0">
+                    <Play className="w-5 h-5 text-[#006eff]" />
+                  </div>
+                  <div>
+                    <p className="font-medium text-white">Bonus: Ad Breakdown Video</p>
+                    <p className="text-sm text-white/50">Watch us break down a high-converting ad</p>
+                  </div>
+                </div>
+                <div className="flex items-center gap-3 text-white/70">
+                  <div className="w-10 h-10 bg-[#006eff]/20 rounded-lg flex items-center justify-center flex-shrink-0">
+                    <Gift className="w-5 h-5 text-[#006eff]" />
+                  </div>
+                  <div>
+                    <p className="font-medium text-white">Bonus: Script Templates</p>
+                    <p className="text-sm text-white/50">Copy-paste scripts for your content</p>
+                  </div>
+                </div>
+              </div>
+            </motion.div>
+
+            {/* Right side - Form */}
+            <motion.div
+              initial={{ opacity: 0, x: 30 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.6 }}
+              viewport={{ once: true }}
+            >
+              <AnimatePresence mode="wait">
+                {!isSubmitted ? (
+                  <motion.div
+                    key="form"
+                    initial={{ opacity: 0 }}
+                    animate={{ opacity: 1 }}
+                    exit={{ opacity: 0 }}
+                    className="bg-white/[0.03] border border-white/10 rounded-2xl p-6 sm:p-8"
+                  >
+                    <form onSubmit={handleSubmit} className="space-y-4">
+                      <div>
+                        <label className="block text-sm font-medium text-white/60 mb-1.5">Your Name</label>
+                        <input
+                          type="text"
+                          value={formData.name}
+                          onChange={(e) => handleInputChange('name', e.target.value)}
+                          placeholder="John Smith"
+                          className={`w-full px-4 py-3 bg-white/5 border rounded-xl text-white placeholder:text-white/30 focus:outline-none focus:ring-2 focus:ring-[#006eff]/50 focus:border-transparent transition-all ${errors.name ? 'border-red-400/50' : 'border-white/10'}`}
+                        />
+                        {errors.name && <p className="text-red-400 text-xs mt-1">{errors.name}</p>}
+                      </div>
+
+                      <div>
+                        <label className="block text-sm font-medium text-white/60 mb-1.5">Email Address</label>
+                        <input
+                          type="email"
+                          value={formData.email}
+                          onChange={(e) => handleInputChange('email', e.target.value)}
+                          placeholder="john@business.com"
+                          className={`w-full px-4 py-3 bg-white/5 border rounded-xl text-white placeholder:text-white/30 focus:outline-none focus:ring-2 focus:ring-[#006eff]/50 focus:border-transparent transition-all ${errors.email ? 'border-red-400/50' : 'border-white/10'}`}
+                        />
+                        {errors.email && <p className="text-red-400 text-xs mt-1">{errors.email}</p>}
+                      </div>
+
+                      <div>
+                        <label className="block text-sm font-medium text-white/60 mb-1.5">Phone Number</label>
+                        <input
+                          type="tel"
+                          value={formData.phone}
+                          onChange={(e) => handleInputChange('phone', e.target.value)}
+                          placeholder="(555) 123-4567"
+                          className={`w-full px-4 py-3 bg-white/5 border rounded-xl text-white placeholder:text-white/30 focus:outline-none focus:ring-2 focus:ring-[#006eff]/50 focus:border-transparent transition-all ${errors.phone ? 'border-red-400/50' : 'border-white/10'}`}
+                        />
+                        {errors.phone && <p className="text-red-400 text-xs mt-1">{errors.phone}</p>}
+                      </div>
+
+                      <button
+                        type="submit"
+                        disabled={isSubmitting}
+                        className="w-full py-4 bg-gradient-to-r from-[#006eff] to-[#0080ff] text-white font-semibold rounded-xl hover:shadow-lg hover:shadow-[#006eff]/25 transition-all flex items-center justify-center gap-2 disabled:opacity-50"
+                      >
+                        {isSubmitting ? (
+                          <>
+                            <div className="w-5 h-5 border-2 border-white/30 border-t-white rounded-full animate-spin" />
+                            Sending...
+                          </>
+                        ) : (
+                          <>
+                            Send Me Everything
+                            <ArrowRight className="w-5 h-5" />
+                          </>
+                        )}
+                      </button>
+
+                      <p className="text-xs text-center text-white/30 mt-3">
+                        We respect your privacy. No spam, ever.
+                      </p>
+                    </form>
+                  </motion.div>
+                ) : (
+                  <motion.div
+                    key="success"
+                    initial={{ opacity: 0, scale: 0.95 }}
+                    animate={{ opacity: 1, scale: 1 }}
+                    className="bg-white/[0.03] border border-[#006eff]/30 rounded-2xl p-8 text-center"
+                  >
+                    <div className="w-16 h-16 bg-[#006eff]/20 rounded-full flex items-center justify-center mx-auto mb-4">
+                      <CheckCircle className="w-8 h-8 text-[#006eff]" />
+                    </div>
+                    <h3 className="text-2xl font-bold text-white mb-2">You're In!</h3>
+                    <p className="text-white/60 mb-4">
+                      Check your inbox — everything is on its way. Keep scrolling to read the full guide now.
+                    </p>
+                    <button
+                      onClick={() => document.getElementById('chapter-1')?.scrollIntoView({ behavior: 'smooth' })}
+                      className="text-[#006eff] font-medium hover:underline"
+                    >
+                      Continue Reading ↓
+                    </button>
+                  </motion.div>
+                )}
+              </AnimatePresence>
+            </motion.div>
+          </div>
+        </div>
+      </section>
+
+      {/* Section 1: Local Domination */}
+      <section id="chapter-1" className="py-20 sm:py-28 relative">
         <div className="absolute inset-0 bg-gradient-to-b from-transparent via-[#006eff]/5 to-transparent pointer-events-none" />
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div
