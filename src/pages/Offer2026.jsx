@@ -59,91 +59,161 @@ export default function Offer2026() {
   };
 
   return (
-    <div className="min-h-screen w-full bg-gradient-to-b from-black via-neutral-950 to-[#001a3d]">
-      {/* Header - Offer Page Style */}
-      <header className="fixed top-0 left-0 right-0 z-50 backdrop-blur-xl bg-black/30 border-b border-white/10">
-        <div className="mx-auto flex w-full max-w-7xl items-center justify-between px-4 sm:px-6 md:px-8 py-3 sm:py-4 gap-4 relative">
+    <div className="min-h-screen w-full bg-black">
+      {/* Header - ScaleX Style */}
+      <header className="fixed top-0 left-0 right-0 z-50 bg-black/80 backdrop-blur-md">
+        <div className="mx-auto flex w-full max-w-7xl items-center justify-between px-4 sm:px-6 md:px-8 py-4">
           {/* Logo - Left */}
-          <div className="flex items-center gap-1.5">
+          <div className="flex items-center gap-2">
             <img 
               src="/p1 white.png" 
               alt="P1 Creative Logo" 
-              className="h-8 sm:h-10 md:h-12 w-auto"
+              className="h-8 sm:h-10 w-auto"
             />
           </div>
 
-          {/* Center Text */}
-          <div className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 hidden md:block text-xs sm:text-sm font-bold tracking-widest text-white/60 uppercase whitespace-nowrap">
-            2026 Launch Offer — Limited Spots
-          </div>
+          {/* Nav Links - Center */}
+          <nav className="hidden md:flex items-center gap-8">
+            <a href="#offer" className="text-sm text-white/70 hover:text-white transition-colors">Offer</a>
+            <a href="#how-it-works" className="text-sm text-white/70 hover:text-white transition-colors">How It Works</a>
+            <a href="#reviews" className="text-sm text-white/70 hover:text-white transition-colors">Reviews</a>
+            <a href="#faq" className="text-sm text-white/70 hover:text-white transition-colors">FAQ</a>
+          </nav>
 
-          {/* CTA Button - Right */}
+          {/* CTA Button - Right (Pill Shape) */}
           <button
             onClick={handleBookCall}
-            className="px-4 py-2 bg-white text-black font-medium text-xs sm:text-sm tracking-wider uppercase rounded-lg hover:bg-gray-100 transition-all duration-300 shadow-lg hover:shadow-xl whitespace-nowrap"
+            className="px-5 py-2.5 bg-transparent border border-white/20 text-white text-sm font-medium rounded-full hover:bg-white/10 transition-all"
           >
-            BOOK A CALL
+            Get Started
           </button>
         </div>
       </header>
 
-      {/* Hero Section */}
-      <section className="pt-24 sm:pt-32 pb-16 sm:pb-20 relative overflow-hidden">
-        <div className="absolute inset-0 bg-gradient-to-b from-[#006eff]/10 to-transparent pointer-events-none" />
-        <div className="absolute top-20 left-1/2 -translate-x-1/2 w-[600px] h-[600px] bg-[#006eff]/20 rounded-full blur-[150px] pointer-events-none" />
+      {/* Hero Section - ScaleX Style */}
+      <section className="pt-28 sm:pt-36 pb-8 relative overflow-hidden">
+        {/* Gradient Glow - Bottom Center */}
+        <div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-[800px] h-[500px] bg-[#006eff]/30 rounded-full blur-[150px] pointer-events-none" />
         
-        <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative">
+        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
           >
-            {/* Badge */}
-            <span className="inline-flex items-center gap-2 px-4 py-1.5 bg-[#006eff]/20 border border-[#006eff]/30 rounded-full text-xs font-medium tracking-wider text-[#006eff] uppercase mb-6">
-              <Sparkles className="w-3 h-3" />
-              2026 Launch Special
-            </span>
+            {/* Trust Badge with Brackets */}
+            <div className="inline-flex items-center gap-2 mb-8">
+              <span className="text-white/30 text-lg">[</span>
+              <div className="flex items-center gap-2">
+                <div className="w-4 h-4 rounded-full border border-white/30 flex items-center justify-center">
+                  <div className="w-2 h-2 bg-white/50 rounded-full" />
+                </div>
+                <span className="text-white/50 text-sm">Trusted By 500+ Businesses</span>
+              </div>
+              <span className="text-white/30 text-lg">]</span>
+            </div>
 
-            {/* Headline */}
-            <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold text-white leading-[1.1] mb-6">
-              Everything You Need to{' '}
-              <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#006eff] to-[#0099ff]">
-                Get Booked Out
-              </span>
+            {/* Headline - Scale Smarter Style */}
+            <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold leading-[1.1] mb-6">
+              <span className="text-white">Scale </span>
+              <span className="text-[#006eff]">Smarter</span>
+              <br />
+              <span className="text-white">Not Harder</span>
             </h1>
 
             {/* Subheadline */}
-            <p className="text-lg sm:text-xl text-white/50 max-w-2xl mx-auto mb-8">
-              The complete system to generate leads, follow up automatically, and fill your calendar — all done for you.
+            <p className="text-base sm:text-lg text-white/50 max-w-xl mx-auto mb-10 leading-relaxed">
+              Unlock The Full Potential Of Your Business Through Tailored Marketing Solutions That Drive Measurable Results.
             </p>
 
-            {/* Price */}
-            <div className="mb-10">
-              <div className="inline-flex items-baseline gap-2">
-                <span className="text-white/40 line-through text-2xl">$4,997</span>
-                <span className="text-5xl sm:text-6xl font-bold text-white">$999</span>
-              </div>
-              <p className="text-[#006eff] font-medium mt-2">One-time setup. No contracts.</p>
+            {/* Two Buttons Side by Side */}
+            <div className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-16">
+              <motion.button
+                onClick={handleBookCall}
+                whileHover={{ scale: 1.02 }}
+                whileTap={{ scale: 0.98 }}
+                className="px-8 py-3.5 bg-[#006eff] text-white font-semibold rounded-lg hover:bg-[#0055cc] transition-all w-full sm:w-auto"
+              >
+                Get Started
+              </motion.button>
+              <motion.button
+                onClick={() => document.getElementById('offer')?.scrollIntoView({ behavior: 'smooth' })}
+                whileHover={{ scale: 1.02 }}
+                whileTap={{ scale: 0.98 }}
+                className="px-8 py-3.5 bg-transparent border border-white/20 text-white font-semibold rounded-lg hover:bg-white/5 transition-all w-full sm:w-auto"
+              >
+                Learn More
+              </motion.button>
             </div>
 
-            {/* CTA Button */}
-            <motion.button
-              onClick={handleBookCall}
-              whileHover={{ scale: 1.02 }}
-              whileTap={{ scale: 0.98 }}
-              className="inline-flex items-center gap-3 px-8 py-4 bg-gradient-to-r from-[#006eff] to-[#0080ff] text-white font-bold text-lg rounded-xl hover:shadow-xl hover:shadow-[#006eff]/30 transition-all"
-            >
-              Book Your Strategy Call
-              <ArrowRight className="w-5 h-5" />
-            </motion.button>
+            {/* Logo Bar */}
+            <div className="flex flex-wrap items-center justify-center gap-8 sm:gap-12 opacity-50 mb-12">
+              <span className="text-white/60 text-sm font-medium">Dental Practices</span>
+              <span className="text-white/40">•</span>
+              <span className="text-white/60 text-sm font-medium">Med Spas</span>
+              <span className="text-white/40">•</span>
+              <span className="text-white/60 text-sm font-medium">Law Firms</span>
+              <span className="text-white/40">•</span>
+              <span className="text-white/60 text-sm font-medium">Real Estate</span>
+              <span className="text-white/40">•</span>
+              <span className="text-white/60 text-sm font-medium">Home Services</span>
+            </div>
+          </motion.div>
 
-            <p className="text-white/30 text-sm mt-4">Free 30-min call. No obligation.</p>
+          {/* Hero Image - Large Rounded */}
+          <motion.div
+            initial={{ opacity: 0, y: 40 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, delay: 0.2 }}
+            className="relative mx-auto max-w-4xl"
+          >
+            <div className="relative rounded-2xl overflow-hidden border border-white/10 shadow-2xl shadow-[#006eff]/10">
+              <img 
+                src="/SOCIAL PROOF/3 copy.png" 
+                alt="Business success"
+                className="w-full h-[300px] sm:h-[400px] lg:h-[450px] object-cover"
+              />
+              {/* Subtle gradient overlay at bottom */}
+              <div className="absolute inset-x-0 bottom-0 h-32 bg-gradient-to-t from-black/60 to-transparent" />
+            </div>
+          </motion.div>
+        </div>
+      </section>
+
+      {/* Price Section - Quick Callout */}
+      <section className="py-12 relative">
+        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6 }}
+            viewport={{ once: true }}
+            className="inline-flex flex-col sm:flex-row items-center gap-4 sm:gap-8 p-6 sm:p-8 bg-white/[0.03] border border-white/10 rounded-2xl"
+          >
+            <div className="text-center sm:text-left">
+              <p className="text-white/50 text-sm mb-1">2026 Launch Special</p>
+              <div className="flex items-baseline gap-3">
+                <span className="text-white/40 line-through text-xl">$4,997</span>
+                <span className="text-4xl sm:text-5xl font-bold text-white">$999</span>
+              </div>
+            </div>
+            <div className="hidden sm:block w-px h-16 bg-white/10" />
+            <div className="text-center sm:text-left">
+              <p className="text-[#006eff] font-semibold">One-time setup</p>
+              <p className="text-white/50 text-sm">No contracts. No hidden fees.</p>
+            </div>
+            <button
+              onClick={handleBookCall}
+              className="px-6 py-3 bg-[#006eff] text-white font-semibold rounded-lg hover:bg-[#0055cc] transition-all"
+            >
+              Claim Offer
+            </button>
           </motion.div>
         </div>
       </section>
 
       {/* What's Included Section */}
-      <section className="py-20 sm:py-28 relative">
+      <section id="offer" className="py-20 sm:py-28 relative bg-black">
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
@@ -200,7 +270,7 @@ export default function Offer2026() {
       </section>
 
       {/* Why This Works Section */}
-      <section className="py-20 sm:py-28 relative">
+      <section id="how-it-works" className="py-20 sm:py-28 relative bg-black">
         <div className="absolute inset-0 bg-gradient-to-b from-transparent via-[#006eff]/5 to-transparent pointer-events-none" />
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div
@@ -247,7 +317,7 @@ export default function Offer2026() {
       </section>
 
       {/* Social Proof Images */}
-      <section className="py-16 relative overflow-hidden">
+      <section className="py-16 relative overflow-hidden bg-black">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
             {[
@@ -272,7 +342,7 @@ export default function Offer2026() {
       </section>
 
       {/* Reviews Section */}
-      <section className="py-20 sm:py-28 relative">
+      <section id="reviews" className="py-20 sm:py-28 relative bg-black">
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
@@ -313,7 +383,7 @@ export default function Offer2026() {
       </section>
 
       {/* FAQ Section */}
-      <section className="py-20 sm:py-28 relative">
+      <section id="faq" className="py-20 sm:py-28 relative bg-black">
         <div className="absolute inset-0 bg-gradient-to-b from-transparent via-[#006eff]/5 to-transparent pointer-events-none" />
         <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div
@@ -352,7 +422,7 @@ export default function Offer2026() {
       </section>
 
       {/* Final CTA Section */}
-      <section className="py-20 sm:py-28">
+      <section className="py-20 sm:py-28 bg-black">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
