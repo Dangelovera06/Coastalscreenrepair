@@ -122,12 +122,32 @@ export default function Offer2026() {
             </h1>
 
             {/* Subheadline */}
-            <p className="text-base sm:text-lg text-white/50 max-w-xl mx-auto mb-10 leading-relaxed">
+            <p className="text-base sm:text-lg text-white/50 max-w-xl mx-auto mb-8 leading-relaxed">
               Unlock The Full Potential Of Your Business Through Tailored Marketing Solutions That Drive Measurable Results.
             </p>
 
+            {/* VSL Placeholder - 16:9 Aspect Ratio */}
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8, delay: 0.2 }}
+              className="relative mx-auto max-w-2xl mb-8"
+            >
+              <div className="relative aspect-video rounded-xl overflow-hidden border border-white/10 shadow-2xl shadow-[#006eff]/20 bg-neutral-900">
+                {/* VSL Placeholder - Replace with actual video */}
+                <div className="absolute inset-0 flex items-center justify-center bg-gradient-to-br from-neutral-900 to-neutral-800">
+                  <div className="text-center">
+                    <div className="w-16 h-16 sm:w-20 sm:h-20 rounded-full bg-[#006eff]/20 border border-[#006eff]/30 flex items-center justify-center mx-auto mb-3 cursor-pointer hover:bg-[#006eff]/30 transition-colors">
+                      <div className="w-0 h-0 border-t-8 border-t-transparent border-l-12 border-l-white border-b-8 border-b-transparent ml-1" style={{ borderLeftWidth: '16px' }} />
+                    </div>
+                    <p className="text-white/40 text-sm">Watch the 2-min breakdown</p>
+                  </div>
+                </div>
+              </div>
+            </motion.div>
+
             {/* Two Buttons Side by Side */}
-            <div className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-16">
+            <div className="flex flex-col sm:flex-row items-center justify-center gap-3 sm:gap-4 mb-10">
               <motion.button
                 onClick={handleBookCall}
                 whileHover={{ scale: 1.02 }}
@@ -146,68 +166,12 @@ export default function Offer2026() {
               </motion.button>
             </div>
 
-            {/* Logo Bar */}
-            <div className="flex flex-wrap items-center justify-center gap-8 sm:gap-12 opacity-50 mb-12">
-              <span className="text-white/60 text-sm font-medium">Dental Practices</span>
-              <span className="text-white/40">•</span>
-              <span className="text-white/60 text-sm font-medium">Med Spas</span>
-              <span className="text-white/40">•</span>
-              <span className="text-white/60 text-sm font-medium">Law Firms</span>
-              <span className="text-white/40">•</span>
-              <span className="text-white/60 text-sm font-medium">Real Estate</span>
-              <span className="text-white/40">•</span>
-              <span className="text-white/60 text-sm font-medium">Home Services</span>
+            {/* Industries Bar - Brighter, smaller on mobile */}
+            <div className="flex flex-wrap items-center justify-center gap-2 sm:gap-4 md:gap-8">
+              {["Dental", "Med Spas", "Law Firms", "Real Estate", "Home Services"].map((industry, i) => (
+                <span key={i} className="text-white/70 text-xs sm:text-sm font-medium">{industry}</span>
+              ))}
             </div>
-          </motion.div>
-
-          {/* Hero Image - Large Rounded */}
-          <motion.div
-            initial={{ opacity: 0, y: 40 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.2 }}
-            className="relative mx-auto max-w-4xl"
-          >
-            <div className="relative rounded-2xl overflow-hidden border border-white/10 shadow-2xl shadow-[#006eff]/10">
-              <img 
-                src="/SOCIAL PROOF/3 copy.png" 
-                alt="Business success"
-                className="w-full h-[300px] sm:h-[400px] lg:h-[450px] object-cover"
-              />
-              {/* Subtle gradient overlay at bottom */}
-              <div className="absolute inset-x-0 bottom-0 h-32 bg-gradient-to-t from-black/60 to-transparent" />
-            </div>
-          </motion.div>
-        </div>
-      </section>
-
-      {/* Price Section - Quick Callout */}
-      <section className="py-12 relative">
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6 }}
-            viewport={{ once: true }}
-            className="inline-flex flex-col sm:flex-row items-center gap-4 sm:gap-8 p-6 sm:p-8 bg-white/[0.03] border border-white/10 rounded-2xl"
-          >
-            <div className="text-center sm:text-left">
-              <p className="text-white/50 text-sm mb-1">2026 Launch Special</p>
-              <div className="flex items-baseline gap-3">
-                <span className="text-white/40 line-through text-xl">$4,997</span>
-                <span className="text-4xl sm:text-5xl font-bold text-white">$999</span>
-              </div>
-            </div>
-            <div className="hidden sm:block w-px h-16 bg-white/10" />
-            <div className="text-center sm:text-left">
-              <p className="text-[#006eff] font-semibold">One-time setup</p>
-              <p className="text-white/50 text-sm">No contracts. No hidden fees.</p>
-            </div>
-            <button
-              onClick={handleBookCall}
-              className="px-6 py-3 bg-[#006eff] text-white font-semibold rounded-lg hover:bg-[#0055cc] transition-all"
-            >
-              Claim Offer
-            </button>
           </motion.div>
         </div>
       </section>
@@ -230,7 +194,8 @@ export default function Offer2026() {
             </p>
           </motion.div>
 
-          <div className="space-y-6">
+          {/* Horizontal Rectangle Cards */}
+          <div className="space-y-4">
             {offerItems.map((item, i) => (
               <motion.div
                 key={i}
@@ -238,33 +203,55 @@ export default function Offer2026() {
                 whileInView={{ opacity: 1, x: 0 }}
                 transition={{ duration: 0.5, delay: i * 0.1 }}
                 viewport={{ once: true }}
-                className="flex flex-col sm:flex-row items-start gap-6 p-6 sm:p-8 bg-white/[0.03] border border-white/5 rounded-2xl hover:bg-white/[0.05] transition-colors group"
+                className="flex items-center gap-4 sm:gap-6 p-4 sm:p-6 bg-white/[0.03] border border-white/5 rounded-xl hover:bg-white/[0.05] transition-colors group"
               >
-                <div className="w-14 h-14 bg-gradient-to-br from-[#006eff] to-[#0099ff] rounded-xl flex items-center justify-center flex-shrink-0 group-hover:scale-110 transition-transform">
-                  <item.icon className="w-7 h-7 text-white" />
+                <div className="w-12 h-12 sm:w-14 sm:h-14 bg-gradient-to-br from-[#006eff] to-[#0099ff] rounded-lg flex items-center justify-center flex-shrink-0 group-hover:scale-110 transition-transform">
+                  <item.icon className="w-6 h-6 sm:w-7 sm:h-7 text-white" />
                 </div>
-                <div className="flex-1">
-                  <h3 className="text-xl sm:text-2xl font-bold text-white mb-2">{item.title}</h3>
-                  <p className="text-white/60">{item.description}</p>
+                <div className="flex-1 min-w-0">
+                  <h3 className="text-lg sm:text-xl font-bold text-white mb-1">{item.title}</h3>
+                  <p className="text-sm text-white/50 line-clamp-2">{item.description}</p>
                 </div>
-                <div className="sm:self-center">
-                  <CheckCircle className="w-6 h-6 text-[#006eff]" />
-                </div>
+                <CheckCircle className="w-5 h-5 sm:w-6 sm:h-6 text-[#006eff] flex-shrink-0" />
               </motion.div>
             ))}
           </div>
+        </div>
+      </section>
 
-          {/* Total Value */}
+      {/* Total Value Breakdown Section */}
+      <section className="py-16 sm:py-20 bg-black">
+        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
             viewport={{ once: true }}
-            className="mt-12 p-8 bg-gradient-to-r from-[#006eff]/10 to-[#0099ff]/5 border border-[#006eff]/20 rounded-2xl text-center"
+            className="p-8 sm:p-12 bg-gradient-to-br from-[#006eff]/10 via-[#006eff]/5 to-transparent border border-[#006eff]/20 rounded-2xl"
           >
-            <p className="text-white/60 mb-2">Total Value: <span className="line-through">$4,997</span></p>
-            <p className="text-3xl sm:text-4xl font-bold text-white mb-2">You Pay: $999</p>
-            <p className="text-[#006eff]">Save $3,998 with this launch offer</p>
+            <div className="grid sm:grid-cols-3 gap-8 items-center text-center">
+              <div>
+                <p className="text-white/40 text-sm uppercase tracking-wider mb-2">Total Value</p>
+                <p className="text-3xl sm:text-4xl font-bold text-white/50 line-through">$4,997</p>
+              </div>
+              <div>
+                <p className="text-[#006eff] text-sm uppercase tracking-wider mb-2">You Pay Today</p>
+                <p className="text-4xl sm:text-5xl font-bold text-white">$999</p>
+              </div>
+              <div>
+                <p className="text-green-400/80 text-sm uppercase tracking-wider mb-2">You Save</p>
+                <p className="text-3xl sm:text-4xl font-bold text-green-400">$3,998</p>
+              </div>
+            </div>
+            <div className="mt-8 pt-8 border-t border-white/10 text-center">
+              <p className="text-white/50 mb-4">One-time setup. No monthly fees. No contracts.</p>
+              <button
+                onClick={handleBookCall}
+                className="px-8 py-4 bg-[#006eff] text-white font-bold rounded-lg hover:bg-[#0055cc] transition-all"
+              >
+                Claim This Offer
+              </button>
+            </div>
           </motion.div>
         </div>
       </section>
@@ -288,7 +275,8 @@ export default function Offer2026() {
             </p>
           </motion.div>
 
-          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+          {/* Horizontal Rectangle Cards - 2 columns */}
+          <div className="grid sm:grid-cols-2 gap-4">
             {[
               { icon: Zap, title: "Speed to Lead", desc: "AI responds to leads in seconds, not hours. That's 21x more likely to qualify." },
               { icon: Clock, title: "24/7 Follow-Up", desc: "Never miss another lead. The system works while you sleep." },
@@ -303,13 +291,15 @@ export default function Offer2026() {
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.4, delay: i * 0.1 }}
                 viewport={{ once: true }}
-                className="p-6 bg-white/[0.03] border border-white/5 rounded-2xl"
+                className="flex items-start gap-4 p-5 bg-white/[0.03] border border-white/5 rounded-xl"
               >
-                <div className="w-12 h-12 bg-[#006eff]/20 rounded-xl flex items-center justify-center mb-4">
-                  <item.icon className="w-6 h-6 text-[#006eff]" />
+                <div className="w-10 h-10 bg-[#006eff]/20 rounded-lg flex items-center justify-center flex-shrink-0">
+                  <item.icon className="w-5 h-5 text-[#006eff]" />
                 </div>
-                <h4 className="font-bold text-white text-lg mb-2">{item.title}</h4>
-                <p className="text-sm text-white/50">{item.desc}</p>
+                <div>
+                  <h4 className="font-bold text-white mb-1">{item.title}</h4>
+                  <p className="text-sm text-white/50">{item.desc}</p>
+                </div>
               </motion.div>
             ))}
           </div>
