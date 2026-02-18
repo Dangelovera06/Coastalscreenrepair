@@ -12,7 +12,13 @@ import {
   ChevronDown,
   Target,
   TrendingUp,
-  Clock
+  Clock,
+  Video,
+  Mail,
+  MessageSquare,
+  Settings,
+  Megaphone,
+  Camera
 } from "lucide-react";
 import { Glow } from "@/components/ui/glow";
 import { Mockup, MockupFrame } from "@/components/ui/mockup";
@@ -98,6 +104,39 @@ const features = [
     title: "Guaranteed Results",
     description: "See real leads within 30 days or we work for free until you do.",
     highlight: "30-Day Guarantee"
+  }
+];
+
+const services = [
+  {
+    icon: Video,
+    title: "Video Production",
+    description: "Scroll-stopping video content that converts viewers into leads."
+  },
+  {
+    icon: Camera,
+    title: "Content Creation",
+    description: "Professional photos, graphics, and ad creatives tailored to your brand."
+  },
+  {
+    icon: Megaphone,
+    title: "Paid Ads Management",
+    description: "We run and optimize your Meta & Google ads for maximum ROI."
+  },
+  {
+    icon: Settings,
+    title: "CRM Setup",
+    description: "Complete CRM configuration so you never lose a lead."
+  },
+  {
+    icon: MessageSquare,
+    title: "Text Automations",
+    description: "Instant SMS follow-ups that book appointments on autopilot."
+  },
+  {
+    icon: Mail,
+    title: "Email Sequences",
+    description: "Nurture campaigns that turn cold leads into paying clients."
   }
 ];
 
@@ -409,8 +448,42 @@ export default function PipelineX() {
         </div>
       </section>
 
-      {/* Comparison Section */}
+      {/* What's Included Section */}
       <section className="py-24 px-6 relative z-10">
+        <div className="max-w-7xl mx-auto">
+          <div className="text-center mb-16">
+            <span className="text-red-500 text-sm font-semibold tracking-wider uppercase mb-4 block">What's Included</span>
+            <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-4">
+              Everything Done For You
+            </h2>
+            <p className="text-white/50 max-w-2xl mx-auto">
+              From content creation to lead conversion — we handle it all so you can focus on closing deals.
+            </p>
+          </div>
+
+          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+            {services.map((service, i) => (
+              <motion.div
+                key={i}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ delay: i * 0.1 }}
+                viewport={{ once: true }}
+                className="p-6 rounded-2xl bg-white/[0.02] border border-white/5 hover:border-red-500/30 transition-all group"
+              >
+                <div className="w-12 h-12 rounded-xl bg-red-500/10 flex items-center justify-center mb-4 group-hover:bg-red-500/20 transition-colors">
+                  <service.icon className="w-6 h-6 text-red-500" />
+                </div>
+                <h3 className="text-lg font-bold mb-2">{service.title}</h3>
+                <p className="text-white/50 text-sm">{service.description}</p>
+              </motion.div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Comparison Section */}
+      <section className="py-24 px-6 relative z-10 bg-white/[0.01]">
         <div className="max-w-5xl mx-auto">
           <div className="text-center mb-16">
             <span className="text-red-500 text-sm font-semibold tracking-wider uppercase mb-4 block">The Difference</span>
@@ -422,7 +495,7 @@ export default function PipelineX() {
 
           <div className="grid md:grid-cols-2 gap-6">
             {/* Traditional */}
-            <div className="p-8 rounded-2xl bg-white/[0.02] border border-white/5">
+            <div className="p-8 rounded-2xl bg-black border border-white/5">
               <div className="flex items-center gap-2 mb-6">
                 <X className="w-5 h-5 text-red-400" />
                 <span className="font-semibold text-white/60">Traditional Agencies</span>
