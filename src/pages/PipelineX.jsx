@@ -257,7 +257,7 @@ export default function PipelineX() {
       </nav>
 
       {/* Hero Section with Glow */}
-      <section className="relative pt-24 sm:pt-32 pb-12 sm:pb-20 px-4 sm:px-6 overflow-hidden">
+      <section className="relative pt-24 sm:pt-32 pb-24 sm:pb-32 px-4 sm:px-6 overflow-hidden">
         <div className="max-w-7xl mx-auto relative z-10">
           <div className="text-center max-w-4xl mx-auto">
             {/* Badge */}
@@ -337,23 +337,26 @@ export default function PipelineX() {
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.5 }}
-              className="relative flex justify-center"
+              className="relative flex justify-center -mx-4 sm:mx-0"
             >
-              <div className="relative w-full max-w-4xl">
-                <Glow variant="center" className="-z-10" />
+              <div className="relative w-full sm:max-w-4xl px-2 sm:px-0">
+                <div className="absolute inset-0 bg-gradient-to-b from-red-500/20 via-red-500/10 to-transparent blur-3xl -z-10 scale-110" />
                 <img
                   src="/pipelinex-hero.png"
                   alt="PipelineX Revenue Dashboard"
-                  className="relative z-10 w-full h-auto rounded-xl sm:rounded-2xl shadow-2xl shadow-red-500/30"
+                  className="relative z-10 w-full h-auto rounded-lg sm:rounded-2xl shadow-2xl shadow-red-500/40"
                 />
               </div>
             </motion.div>
           </div>
         </div>
+        
+        {/* Fade out gradient */}
+        <div className="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-t from-black to-transparent z-20" />
       </section>
 
       {/* Stats Section */}
-      <section className="py-20 px-6 relative z-10 border-y border-white/5">
+      <section className="py-16 sm:py-20 px-6 relative z-10 border-y border-white/5 bg-black">
         <div className="max-w-7xl mx-auto">
           <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
             {[
