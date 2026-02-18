@@ -101,8 +101,8 @@ button:focus-visible {
     --chart-4: 43 74% 66%;
     --chart-5: 27 87% 67%;
     --radius: 0.5rem;
-    --brand: 28 45% 35%;
-    --brand-foreground: 35 60% 50%;
+    --brand: 0 84% 60%;
+    --brand-foreground: 0 72% 51%;
     --sidebar-background: 0 0% 98%;
     --sidebar-foreground: 240 5.3% 26.1%;
     --sidebar-primary: 240 5.9% 10%;
@@ -137,8 +137,8 @@ button:focus-visible {
     --chart-3: 30 80% 55%;
     --chart-4: 280 65% 60%;
     --chart-5: 340 75% 55%;
-    --brand: 35 60% 50%;
-    --brand-foreground: 28 45% 35%;
+    --brand: 0 72% 51%;
+    --brand-foreground: 0 84% 60%;
     --sidebar-background: 240 5.9% 10%;
     --sidebar-foreground: 240 4.8% 95.9%;
     --sidebar-primary: 224.3 76.3% 48%;
