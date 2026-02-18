@@ -59,11 +59,10 @@ export default function System() {
               className="space-y-6"
             >
               <h1 className="text-3xl font-bold tracking-tight sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl text-white leading-tight px-2">
-                The Complete{' '}
+                No More{' '}
                 <span className="bg-clip-text text-transparent bg-gradient-to-r from-[#006eff] via-white/90 to-[#0080ff]">
-                  Lead Generation System
-                </span>{' '}
-                For Your Business
+                  Overpriced Agencies
+                </span>
               </h1>
 
               <p className="text-lg sm:text-xl md:text-2xl font-light px-2 text-white/80">

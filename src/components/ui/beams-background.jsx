@@ -1,4 +1,4 @@
-import { useEffect, useRef } from "react";
+import { useEffect, useRef, useState } from "react";
 import { motion } from "framer-motion";
 import { cn } from "@/lib/utils";
 
@@ -18,6 +18,12 @@ function createBeam(width, height) {
     };
 }
 
+// Check if device is mobile
+const isMobileDevice = () => {
+    if (typeof window === 'undefined') return false;
+    return /iPhone|iPad|iPod|Android/i.test(navigator.userAgent) || window.innerWidth < 768;
+};
+
 export function BeamsBackground({
     className,
     children,
@@ -26,6 +32,7 @@ export function BeamsBackground({
     const canvasRef = useRef(null);
     const beamsRef = useRef([]);
     const animationFrameRef = useRef(0);
+    const [isMobile, setIsMobile] = useState(false);
     const MINIMUM_BEAMS = 20;
 
     const opacityMap = {
@@ -34,7 +41,15 @@ export function BeamsBackground({
         strong: 1,
     };
 
+    // Check mobile on mount
     useEffect(() => {
+        setIsMobile(isMobileDevice());
+    }, []);
+
+    useEffect(() => {
+        // Skip heavy canvas animation on mobile
+        if (isMobile) return;
+
         const canvas = canvasRef.current;
         if (!canvas) return;
 
@@ -42,7 +57,7 @@ export function BeamsBackground({
         if (!ctx) return;
 
         const updateCanvasSize = () => {
-            const dpr = window.devicePixelRatio || 1;
+            const dpr = Math.min(window.devicePixelRatio || 1, 2); // Cap DPR at 2 for performance
             canvas.width = window.innerWidth * dpr;
             canvas.height = window.innerHeight * dpr;
             canvas.style.width = `${window.innerWidth}px`;
@@ -141,35 +156,49 @@ export function BeamsBackground({
                 cancelAnimationFrame(animationFrameRef.current);
             }
         };
-    }, [intensity]);
+    }, [intensity, isMobile]);
 
     return (
         <div
             className={cn(
-                "relative min-h-screen w-full overflow-hidden bg-neutral-950",
+                "relative w-full overflow-hidden bg-neutral-950",
                 className
             )}
         >
-            <canvas
-                ref={canvasRef}
-                className="absolute inset-0"
-                style={{ filter: "blur(15px)" }}
-            />
-
-            <motion.div
-                className="absolute inset-0 bg-neutral-950/5"
-                animate={{
-                    opacity: [0.05, 0.15, 0.05],
-                }}
-                transition={{
-                    duration: 10,
-                    ease: "easeInOut",
-                    repeat: Number.POSITIVE_INFINITY,
-                }}
-                style={{
-                    backdropFilter: "blur(50px)",
-                }}
-            />
+            {/* Desktop: animated canvas beams */}
+            {!isMobile && (
+                <>
+                    <canvas
+                        ref={canvasRef}
+                        className="absolute inset-0"
+                        style={{ filter: "blur(15px)" }}
+                    />
+                    <motion.div
+                        className="absolute inset-0 bg-neutral-950/5"
+                        animate={{
+                            opacity: [0.05, 0.15, 0.05],
+                        }}
+                        transition={{
+                            duration: 10,
+                            ease: "easeInOut",
+                            repeat: Number.POSITIVE_INFINITY,
+                        }}
+                        style={{
+                            backdropFilter: "blur(50px)",
+                        }}
+                    />
+                </>
+            )}
+            
+            {/* Mobile: simple gradient background */}
+            {isMobile && (
+                <div 
+                    className="absolute inset-0"
+                    style={{
+                        background: 'radial-gradient(ellipse at 50% 0%, rgba(0, 110, 255, 0.15) 0%, transparent 60%)'
+                    }}
+                />
+            )}
 
             <div className="relative z-10">
                 {children}

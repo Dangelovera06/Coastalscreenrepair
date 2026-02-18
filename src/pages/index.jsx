@@ -9,6 +9,7 @@ import MedSpaOffer from "./MedSpaOffer";
 import System from "./System";
 import Education from "./Education";
 import Offer2026 from "./Offer2026";
+import PipelineX from "./PipelineX";
 
 import { BrowserRouter as Router, Route, Routes, useLocation } from 'react-router-dom';
 
@@ -23,6 +24,7 @@ const PAGES = {
     System: System,
     Education: Education,
     Offer2026: Offer2026,
+    PipelineX: PipelineX,
     
 }
 
@@ -67,6 +69,9 @@ function PagesContent() {
                 <Route path="/2026offer" element={<Offer2026 />} />
                 <Route path="/2026OFFER" element={<Offer2026 />} />
                 <Route path="/launch" element={<Offer2026 />} />
+                <Route path="/pipelinex" element={<PipelineX />} />
+                <Route path="/PipelineX" element={<PipelineX />} />
+                <Route path="/pipeline" element={<PipelineX />} />
                 
             </Routes>
         </Layout>

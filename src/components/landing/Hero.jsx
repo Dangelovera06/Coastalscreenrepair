@@ -35,7 +35,7 @@ export default function Hero() {
       {/* Main Hero Content */}
       <div 
         ref={containerRef}
-        className="relative z-10 flex min-h-screen items-center justify-center px-4 sm:px-6 py-16 pt-20 sm:pt-24 w-full overflow-x-hidden"
+        className="relative z-10 flex items-center justify-center px-4 sm:px-6 py-16 pt-24 sm:pt-28 pb-12 w-full overflow-x-hidden"
       >
         <div className="mx-auto max-w-6xl w-full">
           {/* Badge - centered */}
@@ -125,9 +125,9 @@ export default function Hero() {
             <div 
               className="relative w-full rounded-2xl overflow-hidden" 
               style={{ 
-                maxWidth: '1000px', 
+                maxWidth: '560px', 
                 aspectRatio: '16/9',
-                boxShadow: '0 0 30px rgba(0, 110, 255, 0.5), 0 0 60px rgba(0, 110, 255, 0.3), 0 0 90px rgba(0, 110, 255, 0.15), inset 0 0 60px rgba(0, 110, 255, 0.1)'
+                boxShadow: '0 0 20px rgba(0, 110, 255, 0.4), 0 0 40px rgba(0, 110, 255, 0.2)'
               }}
             >
               <div className="absolute inset-0 border-2 border-[#006eff]/60 rounded-2xl pointer-events-none z-10"></div>
