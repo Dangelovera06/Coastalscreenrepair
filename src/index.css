@@ -101,6 +101,8 @@ button:focus-visible {
     --chart-4: 43 74% 66%;
     --chart-5: 27 87% 67%;
     --radius: 0.5rem;
+    --brand: 28 45% 35%;
+    --brand-foreground: 35 60% 50%;
     --sidebar-background: 0 0% 98%;
     --sidebar-foreground: 240 5.3% 26.1%;
     --sidebar-primary: 240 5.9% 10%;
@@ -135,6 +137,8 @@ button:focus-visible {
     --chart-3: 30 80% 55%;
     --chart-4: 280 65% 60%;
     --chart-5: 340 75% 55%;
+    --brand: 35 60% 50%;
+    --brand-foreground: 28 45% 35%;
     --sidebar-background: 240 5.9% 10%;
     --sidebar-foreground: 240 4.8% 95.9%;
     --sidebar-primary: 224.3 76.3% 48%;
@@ -198,5 +202,24 @@ img, video, iframe {
   /* Prevent horizontal scroll on mobile */
   .overflow-hidden {
     overflow-x: hidden !important;
+  }
+}
+
+@layer utilities {
+  .delay-100 {
+    animation-delay: 100ms;
+  }
+  .delay-300 {
+    animation-delay: 300ms;
+  }
+  .delay-700 {
+    animation-delay: 700ms;
+  }
+  .delay-1000 {
+    animation-delay: 1000ms;
+  }
+  .fade-bottom {
+    mask-image: linear-gradient(to bottom, white 80%, transparent 100%);
+    -webkit-mask-image: linear-gradient(to bottom, white 80%, transparent 100%);
   }
 }
