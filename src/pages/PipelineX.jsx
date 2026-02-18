@@ -398,7 +398,7 @@ export default function PipelineX() {
           </div>
 
           {/* Step Cards with Images */}
-          <div className="grid md:grid-cols-3 gap-6">
+          <div className="grid md:grid-cols-3 gap-6 max-w-5xl mx-auto">
             {steps.map((step, i) => (
               <motion.div
                 key={i}
@@ -406,7 +406,7 @@ export default function PipelineX() {
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ delay: i * 0.15 }}
                 viewport={{ once: true }}
-                className="relative rounded-3xl overflow-hidden"
+                className="relative"
               >
                 <img 
                   src={step.image} 
