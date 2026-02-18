@@ -265,8 +265,9 @@ export default function PipelineX() {
           <div className="text-center max-w-4xl mx-auto">
             {/* Badge */}
             <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
+              initial={{ opacity: 0, y: 15, scale: 0.95 }}
+              animate={{ opacity: 1, y: 0, scale: 1 }}
+              transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
               className="inline-flex items-center gap-2 px-3 sm:px-4 py-1.5 sm:py-2 rounded-full bg-red-600/10 border border-red-600/20 mb-6 sm:mb-8"
             >
               <Sparkles className="w-3 h-3 sm:w-4 sm:h-4 text-red-500" />
@@ -275,9 +276,9 @@ export default function PipelineX() {
 
             {/* Title */}
             <motion.h1
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 0.1 }}
+              initial={{ opacity: 0, y: 15, scale: 0.95 }}
+              animate={{ opacity: 1, y: 0, scale: 1 }}
+              transition={{ duration: 0.6, delay: 0.1, ease: [0.22, 1, 0.36, 1] }}
               className="text-3xl sm:text-5xl md:text-6xl lg:text-7xl font-bold leading-[1.1] mb-4 sm:mb-6"
             >
               <span className="text-white">Stop Paying For</span>{" "}
@@ -286,9 +287,9 @@ export default function PipelineX() {
 
             {/* Description */}
             <motion.p
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 0.2 }}
+              initial={{ opacity: 0, y: 15, scale: 0.95 }}
+              animate={{ opacity: 1, y: 0, scale: 1 }}
+              transition={{ duration: 0.6, delay: 0.2, ease: [0.22, 1, 0.36, 1] }}
               className="text-base sm:text-xl text-white/50 max-w-xl mx-auto mb-6 sm:mb-8 px-2"
             >
               Done-for-you ads, content, and automations that bring you leads on autopilot.
@@ -296,9 +297,9 @@ export default function PipelineX() {
 
             {/* Social Proof - Above CTA on mobile */}
             <motion.div
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              transition={{ delay: 0.3 }}
+              initial={{ opacity: 0, scale: 0.95 }}
+              animate={{ opacity: 1, scale: 1 }}
+              transition={{ duration: 0.6, delay: 0.3, ease: [0.22, 1, 0.36, 1] }}
               className="flex items-center justify-center gap-3 mb-6 sm:mb-8"
             >
               <div className="flex -space-x-2">
@@ -321,9 +322,9 @@ export default function PipelineX() {
 
             {/* CTA Button with White Glow */}
             <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 0.4 }}
+              initial={{ opacity: 0, y: 15, scale: 0.95 }}
+              animate={{ opacity: 1, y: 0, scale: 1 }}
+              transition={{ duration: 0.6, delay: 0.4, ease: [0.22, 1, 0.36, 1] }}
               className="flex justify-center mb-8 sm:mb-12"
             >
               <button
@@ -337,9 +338,9 @@ export default function PipelineX() {
 
             {/* Dashboard Preview with Glow */}
             <motion.div
-              initial={{ opacity: 0, y: 30 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 0.5 }}
+              initial={{ opacity: 0, y: 20, scale: 0.95 }}
+              animate={{ opacity: 1, y: 0, scale: 1 }}
+              transition={{ duration: 0.8, delay: 0.5, ease: [0.22, 1, 0.36, 1] }}
               className="relative flex justify-center -mx-4 sm:mx-0"
             >
               <div className="relative w-full sm:max-w-4xl px-2 sm:px-0">
@@ -370,9 +371,9 @@ export default function PipelineX() {
             ].map((stat, i) => (
               <motion.div
                 key={i}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ delay: i * 0.1 }}
+                initial={{ opacity: 0, y: 15, scale: 0.95 }}
+                whileInView={{ opacity: 1, y: 0, scale: 1 }}
+                transition={{ duration: 0.6, delay: i * 0.1, ease: [0.22, 1, 0.36, 1] }}
                 viewport={{ once: true }}
                 className="text-center"
               >
@@ -402,9 +403,9 @@ export default function PipelineX() {
             {steps.map((step, i) => (
               <motion.div
                 key={i}
-                initial={{ opacity: 0, y: 30 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ delay: i * 0.15 }}
+                initial={{ opacity: 0, y: 20, scale: 0.95 }}
+                whileInView={{ opacity: 1, y: 0, scale: 1 }}
+                transition={{ duration: 0.7, delay: i * 0.15, ease: [0.22, 1, 0.36, 1] }}
                 viewport={{ once: true }}
                 className="relative"
               >
@@ -433,9 +434,9 @@ export default function PipelineX() {
             {features.map((feature, i) => (
               <motion.div
                 key={i}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ delay: i * 0.1 }}
+                initial={{ opacity: 0, y: 15, scale: 0.95 }}
+                whileInView={{ opacity: 1, y: 0, scale: 1 }}
+                transition={{ duration: 0.6, delay: i * 0.1, ease: [0.22, 1, 0.36, 1] }}
                 viewport={{ once: true }}
                 className="p-8 rounded-2xl bg-black border border-white/5 hover:border-red-500/30 transition-all group"
               >
@@ -472,9 +473,9 @@ export default function PipelineX() {
             {services.map((service, i) => (
               <motion.div
                 key={i}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ delay: i * 0.1 }}
+                initial={{ opacity: 0, y: 15, scale: 0.95 }}
+                whileInView={{ opacity: 1, y: 0, scale: 1 }}
+                transition={{ duration: 0.6, delay: i * 0.08, ease: [0.22, 1, 0.36, 1] }}
                 viewport={{ once: true }}
                 className="p-6 rounded-2xl bg-white/[0.02] border border-white/5 hover:border-red-500/30 transition-all group"
               >
@@ -550,9 +551,9 @@ export default function PipelineX() {
             {testimonials.map((testimonial, i) => (
               <motion.div
                 key={i}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ delay: i * 0.1 }}
+                initial={{ opacity: 0, y: 15, scale: 0.95 }}
+                whileInView={{ opacity: 1, y: 0, scale: 1 }}
+                transition={{ duration: 0.6, delay: i * 0.1, ease: [0.22, 1, 0.36, 1] }}
                 viewport={{ once: true }}
                 className="p-6 rounded-2xl bg-black border border-white/5"
               >
@@ -594,9 +595,9 @@ export default function PipelineX() {
             {faqs.map((faq, i) => (
               <motion.div
                 key={i}
-                initial={{ opacity: 0, y: 10 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ delay: i * 0.05 }}
+                initial={{ opacity: 0, y: 10, scale: 0.98 }}
+                whileInView={{ opacity: 1, y: 0, scale: 1 }}
+                transition={{ duration: 0.5, delay: i * 0.05, ease: [0.22, 1, 0.36, 1] }}
                 viewport={{ once: true }}
                 className="border border-white/5 rounded-xl overflow-hidden"
               >
@@ -613,7 +614,7 @@ export default function PipelineX() {
                       initial={{ height: 0, opacity: 0 }}
                       animate={{ height: 'auto', opacity: 1 }}
                       exit={{ height: 0, opacity: 0 }}
-                      transition={{ duration: 0.2 }}
+                      transition={{ duration: 0.3, ease: [0.22, 1, 0.36, 1] }}
                       className="overflow-hidden"
                     >
                       <p className="px-6 pb-5 text-white/50">{faq.answer}</p>
@@ -630,8 +631,9 @@ export default function PipelineX() {
       <section className="py-24 px-6 relative z-10">
         <div className="max-w-4xl mx-auto">
           <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
+            initial={{ opacity: 0, y: 20, scale: 0.95 }}
+            whileInView={{ opacity: 1, y: 0, scale: 1 }}
+            transition={{ duration: 0.7, ease: [0.22, 1, 0.36, 1] }}
             viewport={{ once: true }}
             className="text-center p-12 sm:p-16 rounded-3xl bg-gradient-to-br from-red-600/20 to-red-600/5 border border-red-500/20 relative overflow-hidden"
           >
@@ -679,13 +681,15 @@ export default function PipelineX() {
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               exit={{ opacity: 0 }}
+              transition={{ duration: 0.3, ease: [0.22, 1, 0.36, 1] }}
               className="fixed inset-0 z-[100] bg-black/80 backdrop-blur-sm"
               onClick={() => setIsFormOpen(false)}
             />
             <motion.div
-              initial={{ opacity: 0, scale: 0.95, y: 20 }}
+              initial={{ opacity: 0, scale: 0.9, y: 20 }}
               animate={{ opacity: 1, scale: 1, y: 0 }}
-              exit={{ opacity: 0, scale: 0.95, y: 20 }}
+              exit={{ opacity: 0, scale: 0.9, y: 20 }}
+              transition={{ duration: 0.4, ease: [0.22, 1, 0.36, 1] }}
               className="fixed top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 z-[101] w-[calc(100%-2rem)] max-w-md"
             >
               <div className="bg-[#111] border border-white/10 rounded-2xl p-8">
