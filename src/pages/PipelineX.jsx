@@ -218,18 +218,17 @@ export default function PipelineX() {
       </nav>
 
       {/* Hero Section with Glow */}
-      <section className="relative pt-32 pb-20 px-6 overflow-hidden">
+      <section className="relative pt-24 sm:pt-32 pb-12 sm:pb-20 px-4 sm:px-6 overflow-hidden">
         <div className="max-w-7xl mx-auto relative z-10">
           <div className="text-center max-w-4xl mx-auto">
             {/* Badge */}
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
-              className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-red-600/10 border border-red-600/20 mb-8"
+              className="inline-flex items-center gap-2 px-3 sm:px-4 py-1.5 sm:py-2 rounded-full bg-red-600/10 border border-red-600/20 mb-6 sm:mb-8"
             >
-              <Sparkles className="w-4 h-4 text-red-500" />
-              <span className="text-sm text-red-400">Limited spots available</span>
-              <ArrowRight className="w-3 h-3 text-red-500" />
+              <Sparkles className="w-3 h-3 sm:w-4 sm:h-4 text-red-500" />
+              <span className="text-xs sm:text-sm text-red-400">Limited spots available</span>
             </motion.div>
 
             {/* Title */}
@@ -237,10 +236,10 @@ export default function PipelineX() {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.1 }}
-              className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold leading-[1.1] mb-6 bg-gradient-to-r from-white to-white/60 bg-clip-text text-transparent"
+              className="text-3xl sm:text-5xl md:text-6xl lg:text-7xl font-bold leading-[1.1] mb-4 sm:mb-6"
             >
-              Stop Competing For Leads.{" "}
-              <span className="bg-gradient-to-r from-red-500 to-red-600 bg-clip-text text-transparent">Own Your Market.</span>
+              <span className="text-white">Stop Paying For</span>{" "}
+              <span className="bg-gradient-to-r from-red-500 to-red-600 bg-clip-text text-transparent">Overpriced Agencies</span>
             </motion.h1>
 
             {/* Description */}
@@ -248,74 +247,65 @@ export default function PipelineX() {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.2 }}
-              className="text-lg sm:text-xl text-white/50 max-w-2xl mx-auto mb-10"
+              className="text-base sm:text-xl text-white/50 max-w-2xl mx-auto mb-6 sm:mb-8 px-2"
             >
-              We build done-for-you lead generation systems for service businesses — without the agency fees and without sharing your leads with competitors.
+              We build done-for-you lead generation systems for service businesses — without the agency fees.
             </motion.p>
 
-            {/* CTA Buttons */}
+            {/* Social Proof - Above CTA on mobile */}
+            <motion.div
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              transition={{ delay: 0.3 }}
+              className="flex items-center justify-center gap-2 mb-6 sm:mb-8"
+            >
+              <div className="flex -space-x-2">
+                {testimonials.slice(0, 4).map((t, i) => (
+                  <img
+                    key={i}
+                    src={t.image}
+                    alt={t.name}
+                    className="w-7 h-7 sm:w-8 sm:h-8 rounded-full border-2 border-black"
+                  />
+                ))}
+              </div>
+              <span className="text-sm text-white/60">250+ businesses</span>
+              <div className="flex gap-0.5 ml-2">
+                {[...Array(5)].map((_, i) => (
+                  <Star key={i} className="w-3 h-3 sm:w-4 sm:h-4 fill-red-500 text-red-500" />
+                ))}
+              </div>
+            </motion.div>
+
+            {/* CTA Button */}
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 0.3 }}
-              className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-12"
+              transition={{ delay: 0.4 }}
+              className="mb-8 sm:mb-12"
             >
               <button
                 onClick={() => setIsFormOpen(true)}
-                className="group px-8 py-4 bg-red-600 text-white font-semibold rounded-lg hover:bg-red-700 transition-all flex items-center gap-2 shadow-lg shadow-red-600/25"
+                className="group w-full sm:w-auto px-8 py-4 bg-red-600 text-white font-semibold rounded-lg hover:bg-red-700 transition-all flex items-center justify-center gap-2 shadow-lg shadow-red-600/25"
               >
                 Apply Now
                 <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
               </button>
             </motion.div>
 
-            {/* Social Proof */}
-            <motion.div
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              transition={{ delay: 0.4 }}
-              className="flex flex-wrap items-center justify-center gap-8 text-sm text-white/40 mb-16"
-            >
-              <div className="flex items-center gap-2">
-                <div className="flex -space-x-2">
-                  {testimonials.slice(0, 4).map((t, i) => (
-                    <img
-                      key={i}
-                      src={t.image}
-                      alt={t.name}
-                      className="w-8 h-8 rounded-full border-2 border-black"
-                    />
-                  ))}
-                </div>
-                <span>250+ partners</span>
-              </div>
-              <div className="flex items-center gap-2">
-                <div className="flex gap-0.5">
-                  {[...Array(5)].map((_, i) => (
-                    <Star key={i} className="w-4 h-4 fill-red-500 text-red-500" />
-                  ))}
-                </div>
-                <span>4.9/5 rating</span>
-              </div>
-              <div className="flex items-center gap-2">
-                <Clock className="w-4 h-4" />
-                <span>Results in 30 days</span>
-              </div>
-            </motion.div>
-
             {/* Dashboard Preview with Glow */}
             <motion.div
-              initial={{ opacity: 0, y: 40 }}
+              initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.5 }}
               className="relative flex justify-center"
             >
-              <div className="relative max-w-4xl w-full">
+              <div className="relative w-full max-w-4xl">
                 <Glow variant="center" className="-z-10" />
                 <img
                   src="/pipelinex-hero.png"
                   alt="PipelineX Revenue Dashboard"
-                  className="relative z-10 w-full h-auto rounded-2xl shadow-2xl shadow-red-500/30"
+                  className="relative z-10 w-full h-auto rounded-xl sm:rounded-2xl shadow-2xl shadow-red-500/30"
                 />
               </div>
             </motion.div>
