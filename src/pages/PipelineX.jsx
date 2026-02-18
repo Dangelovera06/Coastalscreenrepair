@@ -252,7 +252,7 @@ export default function PipelineX() {
           />
           <button
             onClick={() => setIsFormOpen(true)}
-            className="px-6 py-2.5 bg-white text-black font-semibold text-sm rounded-full hover:bg-white/90 transition-colors shadow-[0_0_20px_rgba(255,255,255,0.4)] hover:shadow-[0_0_30px_rgba(255,255,255,0.6)]"
+            className="px-8 py-2 bg-white text-black font-semibold text-sm rounded-full hover:bg-white/90 transition-colors shadow-[0_0_20px_rgba(255,255,255,0.4)] hover:shadow-[0_0_30px_rgba(255,255,255,0.6)]"
           >
             Apply Now
           </button>
@@ -328,7 +328,7 @@ export default function PipelineX() {
             >
               <button
                 onClick={() => setIsFormOpen(true)}
-                className="group px-8 py-4 bg-white text-black font-semibold rounded-lg hover:bg-white/90 transition-all inline-flex items-center gap-2 shadow-[0_0_30px_rgba(255,255,255,0.5)] hover:shadow-[0_0_50px_rgba(255,255,255,0.7)]"
+                className="group px-12 py-3 bg-white text-black font-semibold rounded-lg hover:bg-white/90 transition-all inline-flex items-center gap-2 shadow-[0_0_30px_rgba(255,255,255,0.5)] hover:shadow-[0_0_50px_rgba(255,255,255,0.7)]"
               >
                 Apply Now
                 <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
@@ -645,7 +645,7 @@ export default function PipelineX() {
               </p>
               <button
                 onClick={() => setIsFormOpen(true)}
-                className="px-10 py-4 bg-white text-black font-semibold rounded-lg hover:bg-white/90 transition-colors text-lg shadow-[0_0_30px_rgba(255,255,255,0.5)] hover:shadow-[0_0_50px_rgba(255,255,255,0.7)]"
+                className="px-14 py-3 bg-white text-black font-semibold rounded-lg hover:bg-white/90 transition-colors text-lg shadow-[0_0_30px_rgba(255,255,255,0.5)] hover:shadow-[0_0_50px_rgba(255,255,255,0.7)]"
               >
                 Apply Now
               </button>
