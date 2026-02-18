@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { 
   CheckCircle, 
@@ -190,6 +190,25 @@ export default function PipelineX() {
   const [isSubmitted, setIsSubmitted] = useState(false);
   const [openFaq, setOpenFaq] = useState(null);
 
+  useEffect(() => {
+    document.title = "PipelineX - Done-For-You Lead Generation";
+    
+    const metaTags = {
+      'og:title': 'PipelineX - Done-For-You Lead Generation',
+      'og:description': 'Join 100+ businesses getting leads without overpaying. Exclusive territories, custom content, and guaranteed results.',
+      'og:image': '/pipelinex-logo.png',
+      'twitter:image': '/pipelinex-logo.png',
+      'description': 'Join 100+ businesses getting leads without overpaying. Done-for-you ads, content, and automations.'
+    };
+
+    Object.entries(metaTags).forEach(([name, content]) => {
+      let meta = document.querySelector(`meta[property="${name}"]`) || document.querySelector(`meta[name="${name}"]`);
+      if (meta) {
+        meta.setAttribute('content', content);
+      }
+    });
+  }, []);
+
   const handleSubmit = async (e) => {
     e.preventDefault();
     setIsSubmitting(true);
@@ -252,9 +271,10 @@ export default function PipelineX() {
           />
           <button
             onClick={() => setIsFormOpen(true)}
-            className="px-8 py-2 bg-white text-black font-semibold text-sm rounded-full hover:bg-white/90 transition-colors shadow-[0_0_20px_rgba(255,255,255,0.4)] hover:shadow-[0_0_30px_rgba(255,255,255,0.6)]"
+            className="px-4 sm:px-6 py-2 bg-white text-black font-semibold text-xs sm:text-sm rounded-full hover:bg-white/90 transition-colors shadow-[0_0_20px_rgba(255,255,255,0.4)] hover:shadow-[0_0_30px_rgba(255,255,255,0.6)]"
           >
-            Apply Now
+            <span className="hidden sm:inline">Join 100+ Businesses Getting Leads</span>
+            <span className="sm:hidden">Join Now</span>
           </button>
         </div>
       </nav>
