@@ -65,18 +65,28 @@ const testimonials = [
 const steps = [
   {
     number: "01",
-    title: "Apply for Your Spot",
-    description: "Submit your application to check if your area is still available. We only work with one business per industry, per location."
+    title: "Discovery & Strategy",
+    description: "We analyze your market, competitors, and ideal customer to build a winning strategy."
   },
   {
     number: "02", 
-    title: "Get Your Custom Assets",
-    description: "Our team builds your marketing materials, ad creatives, and lead generation system tailored to your business."
+    title: "Content Production",
+    description: "Our team creates scroll-stopping videos, photos, and ad creatives for your brand."
   },
   {
     number: "03",
-    title: "Watch Leads Pour In",
-    description: "Sit back as qualified leads book directly into your calendar. No competition, no shared leads."
+    title: "Launch Ads",
+    description: "We launch and manage your Meta & Google ads to drive qualified traffic."
+  },
+  {
+    number: "04",
+    title: "CRM & Automations",
+    description: "Set up your CRM with text and email sequences that follow up instantly."
+  },
+  {
+    number: "05",
+    title: "Optimize & Scale",
+    description: "We continuously optimize your campaigns to maximize ROI and scale results."
   }
 ];
 
@@ -249,7 +259,7 @@ export default function PipelineX() {
           />
           <button
             onClick={() => setIsFormOpen(true)}
-            className="px-6 py-2.5 bg-red-600 text-white font-semibold text-sm rounded-full hover:bg-red-700 transition-colors"
+            className="px-6 py-2.5 bg-red-600 text-white font-semibold text-sm rounded-full hover:bg-red-700 transition-colors shadow-[0_0_20px_rgba(255,255,255,0.25)] hover:shadow-[0_0_30px_rgba(255,255,255,0.35)]"
           >
             Apply Now
           </button>
@@ -286,9 +296,9 @@ export default function PipelineX() {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.2 }}
-              className="text-base sm:text-xl text-white/50 max-w-2xl mx-auto mb-6 sm:mb-8 px-2"
+              className="text-base sm:text-xl text-white/50 max-w-xl mx-auto mb-6 sm:mb-8 px-2"
             >
-              We build done-for-you lead generation systems for service businesses — without the agency fees.
+              Done-for-you ads, content, and automations that bring you leads on autopilot.
             </motion.p>
 
             {/* Social Proof - Above CTA on mobile */}
@@ -296,7 +306,7 @@ export default function PipelineX() {
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               transition={{ delay: 0.3 }}
-              className="flex items-center justify-center gap-2 mb-6 sm:mb-8"
+              className="flex items-center justify-center gap-3 mb-6 sm:mb-8"
             >
               <div className="flex -space-x-2">
                 {testimonials.slice(0, 4).map((t, i) => (
@@ -309,23 +319,23 @@ export default function PipelineX() {
                 ))}
               </div>
               <span className="text-sm text-white/60">250+ businesses</span>
-              <div className="flex gap-0.5 ml-2">
+              <div className="flex gap-0.5">
                 {[...Array(5)].map((_, i) => (
                   <Star key={i} className="w-3 h-3 sm:w-4 sm:h-4 fill-red-500 text-red-500" />
                 ))}
               </div>
             </motion.div>
 
-            {/* CTA Button */}
+            {/* CTA Button with White Glow */}
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.4 }}
-              className="mb-8 sm:mb-12"
+              className="flex justify-center mb-8 sm:mb-12"
             >
               <button
                 onClick={() => setIsFormOpen(true)}
-                className="group w-full sm:w-auto px-8 py-4 bg-red-600 text-white font-semibold rounded-lg hover:bg-red-700 transition-all flex items-center justify-center gap-2 shadow-lg shadow-red-600/25"
+                className="group px-8 py-4 bg-red-600 text-white font-semibold rounded-lg hover:bg-red-700 transition-all inline-flex items-center gap-2 shadow-[0_0_30px_rgba(255,255,255,0.3)] hover:shadow-[0_0_40px_rgba(255,255,255,0.4)]"
               >
                 Apply Now
                 <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
@@ -381,33 +391,61 @@ export default function PipelineX() {
         </div>
       </section>
 
-      {/* How It Works */}
+      {/* Our Framework */}
       <section className="py-24 px-6 relative z-10">
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-16">
-            <span className="text-red-500 text-sm font-semibold tracking-wider uppercase mb-4 block">How It Works</span>
+            <span className="text-red-500 text-sm font-semibold tracking-wider uppercase mb-4 block">Our Framework</span>
             <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-4">
-              More Leads in 3 Simple Steps
+              How We Bring You More Leads
             </h2>
             <p className="text-white/50 max-w-xl mx-auto">
-              No building, no guessing, no wasted months. Just plug it in and go.
+              Our proven 5-step system that consistently delivers results.
             </p>
           </div>
 
-          <div className="grid md:grid-cols-3 gap-8">
+          {/* Desktop: Horizontal flow with connecting lines */}
+          <div className="hidden lg:block relative">
+            <div className="absolute top-16 left-[10%] right-[10%] h-0.5 bg-gradient-to-r from-red-500/0 via-red-500/50 to-red-500/0" />
+            <div className="grid grid-cols-5 gap-4">
+              {steps.map((step, i) => (
+                <motion.div
+                  key={i}
+                  initial={{ opacity: 0, y: 30 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  transition={{ delay: i * 0.1 }}
+                  viewport={{ once: true }}
+                  className="relative text-center"
+                >
+                  <div className="w-12 h-12 mx-auto mb-4 rounded-full bg-red-500 flex items-center justify-center text-white font-bold text-lg relative z-10">
+                    {step.number}
+                  </div>
+                  <h3 className="text-lg font-bold mb-2">{step.title}</h3>
+                  <p className="text-white/50 text-sm">{step.description}</p>
+                </motion.div>
+              ))}
+            </div>
+          </div>
+
+          {/* Mobile/Tablet: Vertical cards */}
+          <div className="lg:hidden grid sm:grid-cols-2 gap-6">
             {steps.map((step, i) => (
               <motion.div
                 key={i}
                 initial={{ opacity: 0, y: 30 }}
                 whileInView={{ opacity: 1, y: 0 }}
-                transition={{ delay: i * 0.15 }}
+                transition={{ delay: i * 0.1 }}
                 viewport={{ once: true }}
-                className="relative p-8 rounded-2xl bg-white/[0.02] border border-white/5 hover:border-red-500/30 transition-colors group"
+                className="relative p-6 rounded-2xl bg-white/[0.02] border border-white/5"
               >
-                <span className="text-6xl font-bold text-red-500/20 absolute top-4 right-6">{step.number}</span>
-                <div className="relative z-10">
-                  <h3 className="text-xl font-bold mb-3">{step.title}</h3>
-                  <p className="text-white/50">{step.description}</p>
+                <div className="flex items-start gap-4">
+                  <div className="w-10 h-10 flex-shrink-0 rounded-full bg-red-500 flex items-center justify-center text-white font-bold text-sm">
+                    {step.number}
+                  </div>
+                  <div>
+                    <h3 className="text-lg font-bold mb-1">{step.title}</h3>
+                    <p className="text-white/50 text-sm">{step.description}</p>
+                  </div>
                 </div>
               </motion.div>
             ))}
@@ -641,7 +679,7 @@ export default function PipelineX() {
               </p>
               <button
                 onClick={() => setIsFormOpen(true)}
-                className="px-10 py-4 bg-red-600 text-white font-semibold rounded-lg hover:bg-red-700 transition-colors text-lg shadow-lg shadow-red-600/25"
+                className="px-10 py-4 bg-red-600 text-white font-semibold rounded-lg hover:bg-red-700 transition-colors text-lg shadow-[0_0_30px_rgba(255,255,255,0.3)] hover:shadow-[0_0_40px_rgba(255,255,255,0.4)]"
               >
                 Apply Now
               </button>
