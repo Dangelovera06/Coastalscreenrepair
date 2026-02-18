@@ -64,29 +64,22 @@ const testimonials = [
 
 const steps = [
   {
-    number: "01",
-    title: "Discovery & Strategy",
-    description: "We analyze your market, competitors, and ideal customer to build a winning strategy."
+    number: "1",
+    title: "Market Research",
+    description: "Gather all information on your competitors to make winning creatives",
+    image: "/step-1.png"
   },
   {
-    number: "02", 
-    title: "Content Production",
-    description: "Our team creates scroll-stopping videos, photos, and ad creatives for your brand."
+    number: "2", 
+    title: "Build All Marketing Assets",
+    description: "Set up your Meta Ads, CRM, Auto Followup, Landing pages...+",
+    image: "/step-2.png"
   },
   {
-    number: "03",
-    title: "Launch Ads",
-    description: "We launch and manage your Meta & Google ads to drive qualified traffic."
-  },
-  {
-    number: "04",
-    title: "CRM & Automations",
-    description: "Set up your CRM with text and email sequences that follow up instantly."
-  },
-  {
-    number: "05",
-    title: "Optimize & Scale",
-    description: "We continuously optimize your campaigns to maximize ROI and scale results."
+    number: "3",
+    title: "We Launch in 72Hrs",
+    description: "We Launch all creatives on your ad platforms, and you start getting paid!",
+    image: "/step-3.png"
   }
 ];
 
@@ -259,7 +252,7 @@ export default function PipelineX() {
           />
           <button
             onClick={() => setIsFormOpen(true)}
-            className="px-6 py-2.5 bg-red-600 text-white font-semibold text-sm rounded-full hover:bg-red-700 transition-colors shadow-[0_0_20px_rgba(255,255,255,0.25)] hover:shadow-[0_0_30px_rgba(255,255,255,0.35)]"
+            className="px-6 py-2.5 bg-white text-black font-semibold text-sm rounded-full hover:bg-white/90 transition-colors shadow-[0_0_20px_rgba(255,255,255,0.4)] hover:shadow-[0_0_30px_rgba(255,255,255,0.6)]"
           >
             Apply Now
           </button>
@@ -335,7 +328,7 @@ export default function PipelineX() {
             >
               <button
                 onClick={() => setIsFormOpen(true)}
-                className="group px-8 py-4 bg-red-600 text-white font-semibold rounded-lg hover:bg-red-700 transition-all inline-flex items-center gap-2 shadow-[0_0_30px_rgba(255,255,255,0.3)] hover:shadow-[0_0_40px_rgba(255,255,255,0.4)]"
+                className="group px-8 py-4 bg-white text-black font-semibold rounded-lg hover:bg-white/90 transition-all inline-flex items-center gap-2 shadow-[0_0_30px_rgba(255,255,255,0.5)] hover:shadow-[0_0_50px_rgba(255,255,255,0.7)]"
               >
                 Apply Now
                 <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
@@ -400,53 +393,26 @@ export default function PipelineX() {
               How We Bring You More Leads
             </h2>
             <p className="text-white/50 max-w-xl mx-auto">
-              Our proven 5-step system that consistently delivers results.
+              Our proven 3-step system that consistently delivers results.
             </p>
           </div>
 
-          {/* Desktop: Horizontal flow with connecting lines */}
-          <div className="hidden lg:block relative">
-            <div className="absolute top-16 left-[10%] right-[10%] h-0.5 bg-gradient-to-r from-red-500/0 via-red-500/50 to-red-500/0" />
-            <div className="grid grid-cols-5 gap-4">
-              {steps.map((step, i) => (
-                <motion.div
-                  key={i}
-                  initial={{ opacity: 0, y: 30 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  transition={{ delay: i * 0.1 }}
-                  viewport={{ once: true }}
-                  className="relative text-center"
-                >
-                  <div className="w-12 h-12 mx-auto mb-4 rounded-full bg-red-500 flex items-center justify-center text-white font-bold text-lg relative z-10">
-                    {step.number}
-                  </div>
-                  <h3 className="text-lg font-bold mb-2">{step.title}</h3>
-                  <p className="text-white/50 text-sm">{step.description}</p>
-                </motion.div>
-              ))}
-            </div>
-          </div>
-
-          {/* Mobile/Tablet: Vertical cards */}
-          <div className="lg:hidden grid sm:grid-cols-2 gap-6">
+          {/* Step Cards with Images */}
+          <div className="grid md:grid-cols-3 gap-6">
             {steps.map((step, i) => (
               <motion.div
                 key={i}
                 initial={{ opacity: 0, y: 30 }}
                 whileInView={{ opacity: 1, y: 0 }}
-                transition={{ delay: i * 0.1 }}
+                transition={{ delay: i * 0.15 }}
                 viewport={{ once: true }}
-                className="relative p-6 rounded-2xl bg-white/[0.02] border border-white/5"
+                className="relative rounded-3xl overflow-hidden"
               >
-                <div className="flex items-start gap-4">
-                  <div className="w-10 h-10 flex-shrink-0 rounded-full bg-red-500 flex items-center justify-center text-white font-bold text-sm">
-                    {step.number}
-                  </div>
-                  <div>
-                    <h3 className="text-lg font-bold mb-1">{step.title}</h3>
-                    <p className="text-white/50 text-sm">{step.description}</p>
-                  </div>
-                </div>
+                <img 
+                  src={step.image} 
+                  alt={step.title}
+                  className="w-full h-auto"
+                />
               </motion.div>
             ))}
           </div>
@@ -679,7 +645,7 @@ export default function PipelineX() {
               </p>
               <button
                 onClick={() => setIsFormOpen(true)}
-                className="px-10 py-4 bg-red-600 text-white font-semibold rounded-lg hover:bg-red-700 transition-colors text-lg shadow-[0_0_30px_rgba(255,255,255,0.3)] hover:shadow-[0_0_40px_rgba(255,255,255,0.4)]"
+                className="px-10 py-4 bg-white text-black font-semibold rounded-lg hover:bg-white/90 transition-colors text-lg shadow-[0_0_30px_rgba(255,255,255,0.5)] hover:shadow-[0_0_50px_rgba(255,255,255,0.7)]"
               >
                 Apply Now
               </button>
@@ -720,7 +686,7 @@ export default function PipelineX() {
               initial={{ opacity: 0, scale: 0.95, y: 20 }}
               animate={{ opacity: 1, scale: 1, y: 0 }}
               exit={{ opacity: 0, scale: 0.95, y: 20 }}
-              className="fixed top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 z-[101] w-full max-w-md mx-4"
+              className="fixed top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 z-[101] w-[calc(100%-2rem)] max-w-md"
             >
               <div className="bg-[#111] border border-white/10 rounded-2xl p-8">
                 <button
