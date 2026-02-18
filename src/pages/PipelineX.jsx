@@ -313,8 +313,8 @@ export default function PipelineX() {
               <MockupFrame size="small" className="mx-auto">
                 <Mockup type="responsive">
                   <img
-                    src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=1248&q=80"
-                    alt="Dashboard Preview"
+                    src="/pipelinex-hero.png"
+                    alt="PipelineX Revenue Dashboard"
                     className="w-full h-auto"
                   />
                 </Mockup>
