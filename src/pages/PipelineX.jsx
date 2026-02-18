@@ -33,7 +33,7 @@ const testimonials = [
   {
     name: "Michelle Chen",
     role: "Law Firm Partner",
-    text: "The exclusive territory model means we're the only firm in our area using their system. No competition, just results.",
+    text: "The exclusive model means we're the only firm in our area using their system. No competition, just results.",
     image: "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=100&h=100&fit=crop"
   },
   {
@@ -51,7 +51,7 @@ const testimonials = [
   {
     name: "Dr. Kevin Park",
     role: "Chiropractor",
-    text: "I was skeptical at first, but the exclusive territory sold me. No one else in my area can use this. Game changer.",
+    text: "I was skeptical at first, but the exclusive access sold me. No one else in my area can use this. Game changer.",
     image: "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=100&h=100&fit=crop"
   },
 ];
@@ -59,7 +59,7 @@ const testimonials = [
 const steps = [
   {
     number: "01",
-    title: "Apply for Your Territory",
+    title: "Apply for Your Spot",
     description: "Submit your application to check if your area is still available. We only work with one business per industry, per location."
   },
   {
@@ -77,7 +77,7 @@ const steps = [
 const features = [
   {
     icon: Shield,
-    title: "Exclusive Territory",
+    title: "Exclusive Spot",
     description: "Your market is yours alone. No competitors using our system in your area.",
     highlight: "100% Exclusive"
   },
@@ -104,7 +104,7 @@ const features = [
 const faqs = [
   {
     question: "What makes this different from other marketing agencies?",
-    answer: "We don't work with your competitors. Period. When you partner with us, you get exclusive access to our system in your territory. Traditional agencies often work with multiple businesses in the same industry and area — we never do."
+    answer: "We don't work with your competitors. Period. When you partner with us, you get exclusive access to our system in your area. Traditional agencies often work with multiple businesses in the same industry and area — we never do."
   },
   {
     question: "How quickly can I expect to see results?",
@@ -119,7 +119,7 @@ const faqs = [
     answer: "Everything you need: custom ad creatives, landing pages, lead capture forms, AI follow-up sequences, appointment booking, and ongoing optimization. No hidden fees."
   },
   {
-    question: "How do I know if my territory is available?",
+    question: "How do I know if my spot is available?",
     answer: "Simply apply using the form on this page. We'll check our database and get back to you within 24 hours with availability and next steps."
   }
 ];
@@ -133,7 +133,7 @@ const comparisonData = {
     "Long contracts, slow results"
   ],
   pipelinex: [
-    "Exclusive to your territory",
+    "Exclusive to your area",
     "Transparent, fair pricing",
     "Custom, cinematic content",
     "All leads are 100% yours",
@@ -212,7 +212,7 @@ export default function PipelineX() {
             onClick={() => setIsFormOpen(true)}
             className="px-6 py-2.5 bg-red-600 text-white font-semibold text-sm rounded-full hover:bg-red-700 transition-colors"
           >
-            Check Availability
+            Apply Now
           </button>
         </div>
       </nav>
@@ -228,7 +228,7 @@ export default function PipelineX() {
               className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-red-600/10 border border-red-600/20 mb-8"
             >
               <Sparkles className="w-4 h-4 text-red-500" />
-              <span className="text-sm text-red-400">Limited territories available</span>
+              <span className="text-sm text-red-400">Limited spots available</span>
               <ArrowRight className="w-3 h-3 text-red-500" />
             </motion.div>
 
@@ -240,7 +240,7 @@ export default function PipelineX() {
               className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold leading-[1.1] mb-6 bg-gradient-to-r from-white to-white/60 bg-clip-text text-transparent"
             >
               Stop Competing For Leads.{" "}
-              <span className="bg-gradient-to-r from-red-500 to-red-600 bg-clip-text text-transparent">Own Your Territory.</span>
+              <span className="bg-gradient-to-r from-red-500 to-red-600 bg-clip-text text-transparent">Own Your Market.</span>
             </motion.h1>
 
             {/* Description */}
@@ -264,7 +264,7 @@ export default function PipelineX() {
                 onClick={() => setIsFormOpen(true)}
                 className="group px-8 py-4 bg-red-600 text-white font-semibold rounded-lg hover:bg-red-700 transition-all flex items-center gap-2 shadow-lg shadow-red-600/25"
               >
-                Check If Your Territory Is Available
+                Apply Now
                 <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
               </button>
             </motion.div>
@@ -331,7 +331,7 @@ export default function PipelineX() {
           <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
             {[
               { value: "$50M+", label: "Revenue Generated for Partners" },
-              { value: "250+", label: "Exclusive Territories Claimed" },
+              { value: "250+", label: "Exclusive Spots Claimed" },
               { value: "300%", label: "Average Lead Increase" },
               { value: "30", label: "Days to First Results" },
             ].map((stat, i) => (
@@ -570,16 +570,16 @@ export default function PipelineX() {
             <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,_rgba(220,38,38,0.15)_0%,_transparent_70%)]" />
             <div className="relative z-10">
               <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-4">
-                Ready to Own Your Territory?
+                Ready to Claim Your Spot?
               </h2>
               <p className="text-white/50 text-lg mb-8 max-w-xl mx-auto">
-                We only partner with one business per industry, per area. Check if your territory is still available.
+                We only partner with one business per industry, per area. Limited spots available.
               </p>
               <button
                 onClick={() => setIsFormOpen(true)}
                 className="px-10 py-4 bg-red-600 text-white font-semibold rounded-lg hover:bg-red-700 transition-colors text-lg shadow-lg shadow-red-600/25"
               >
-                Check Availability Now
+                Apply Now
               </button>
             </div>
           </motion.div>
@@ -634,13 +634,13 @@ export default function PipelineX() {
                       <CheckCircle className="w-8 h-8 text-red-500" />
                     </div>
                     <h3 className="text-2xl font-bold mb-2">Application Received!</h3>
-                    <p className="text-white/50">We'll check your territory and get back to you within 24 hours.</p>
+                    <p className="text-white/50">We'll review your application and get back to you within 24 hours.</p>
                   </div>
                 ) : (
                   <>
                     <div className="text-center mb-8">
-                      <h3 className="text-2xl font-bold mb-2">Check Your Territory</h3>
-                      <p className="text-white/50 text-sm">See if your area is still available</p>
+                      <h3 className="text-2xl font-bold mb-2">Apply Now</h3>
+                      <p className="text-white/50 text-sm">Limited spots available in your area</p>
                     </div>
 
                     <form onSubmit={handleSubmit} className="space-y-4">
