@@ -45,20 +45,17 @@ const features = [
   {
     icon: Shield,
     title: "Exclusive Territory",
-    description: "No competitors in your area. Your leads are yours alone.",
-    color: "from-blue-500 to-purple-500"
+    description: "No competitors in your area. Your leads are yours alone."
   },
   {
     icon: Users,
     title: "Done-For-You Assets",
-    description: "Professional marketing materials without agency markup.",
-    color: "from-pink-500 to-red-500"
+    description: "Professional marketing materials without agency markup."
   },
   {
     icon: Zap,
     title: "AI-Powered Follow-Up",
-    description: "Automated systems that convert leads while you sleep.",
-    color: "from-purple-500 to-blue-500"
+    description: "Automated systems that convert leads while you sleep."
   }
 ];
 
@@ -127,19 +124,17 @@ export default function PipelineX() {
       {/* Hero Section */}
       <section className="relative pt-32 pb-20 px-6">
         <div className="absolute inset-0 overflow-hidden">
-          <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-blue-500/20 rounded-full blur-3xl"></div>
-          <div className="absolute bottom-1/4 right-1/4 w-96 h-96 bg-purple-500/20 rounded-full blur-3xl"></div>
-          <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-64 h-64 bg-pink-500/10 rounded-full blur-3xl"></div>
+          <div className="absolute top-0 right-0 w-[600px] h-[600px] bg-rose-500/10 rounded-full blur-3xl"></div>
         </div>
         
-        <div className="relative max-w-5xl mx-auto text-center">
+        <div className="relative max-w-6xl mx-auto">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
           >
             <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full border border-white/20 bg-white/5 mb-8">
-              <div className="w-2 h-2 rounded-full bg-green-400 animate-pulse"></div>
+              <div className="w-2 h-2 rounded-full bg-rose-500 animate-pulse"></div>
               <span className="text-sm text-white/70">Exclusive Partnership Program</span>
             </div>
           </motion.div>
@@ -148,40 +143,36 @@ export default function PipelineX() {
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.1 }}
-            className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-black leading-[0.95] mb-6"
+            className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-black leading-[0.95] mb-8 max-w-4xl"
           >
             No More
             <br />
-            <span className="bg-clip-text text-transparent bg-gradient-to-r from-blue-400 via-purple-400 to-pink-400">
-              Overpriced Agencies
-            </span>
+            <span className="text-rose-500">Overpriced Agencies</span>
           </motion.h1>
 
           <motion.p
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.2 }}
-            className="text-lg sm:text-xl text-white/60 max-w-2xl mx-auto mb-10 leading-relaxed"
+            className="text-lg sm:text-xl text-white/60 max-w-xl mb-10 leading-relaxed"
           >
-            We partner with service-based businesses to generate leads through premium marketing assets — 
-            <span className="text-white font-medium"> without the fancy fees</span> and 
-            <span className="text-white font-medium"> without competing for your leads</span>.
+            We partner with service-based businesses to generate leads through premium marketing assets — without the fancy fees and without competing for your leads.
           </motion.p>
 
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.3 }}
-            className="flex flex-col sm:flex-row items-center justify-center gap-4"
+            className="flex flex-col sm:flex-row items-start gap-4"
           >
             <button
               onClick={() => setIsFormOpen(true)}
-              className="group px-8 py-4 bg-gradient-to-r from-blue-500 via-purple-500 to-pink-500 text-white font-bold rounded-full hover:shadow-lg hover:shadow-purple-500/30 transition-all flex items-center gap-2"
+              className="group px-8 py-4 bg-rose-500 text-white font-bold rounded-full hover:bg-rose-600 transition-all flex items-center gap-2"
             >
               Check Availability
               <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
             </button>
-            <p className="text-sm text-white/40">Limited spots per territory</p>
+            <p className="text-sm text-white/40 sm:py-4">Limited spots per territory</p>
           </motion.div>
         </div>
       </section>
@@ -197,10 +188,10 @@ export default function PipelineX() {
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.5, delay: index * 0.1 }}
                 viewport={{ once: true }}
-                className="p-8 rounded-2xl bg-white/5 border border-white/10 hover:border-white/20 transition-all group"
+                className="p-8 rounded-2xl bg-white/5 border border-white/10 hover:border-rose-500/30 transition-all group"
               >
-                <div className={`w-12 h-12 rounded-xl bg-gradient-to-br ${feature.color} flex items-center justify-center mb-5`}>
-                  <feature.icon className="w-6 h-6 text-white" />
+                <div className="w-12 h-12 rounded-xl bg-rose-500/20 flex items-center justify-center mb-5 group-hover:bg-rose-500/30 transition-colors">
+                  <feature.icon className="w-6 h-6 text-rose-500" />
                 </div>
                 <h3 className="text-xl font-bold text-white mb-2">{feature.title}</h3>
                 <p className="text-white/60">{feature.description}</p>
@@ -220,7 +211,7 @@ export default function PipelineX() {
             viewport={{ once: true }}
             className="text-3xl sm:text-4xl md:text-5xl font-bold mb-4"
           >
-            The <span className="bg-clip-text text-transparent bg-gradient-to-r from-blue-400 to-purple-400">Partnership</span> Model
+            The <span className="text-rose-500">Partnership</span> Model
           </motion.h2>
           <p className="text-white/60 text-lg">Why compete when you can dominate?</p>
         </div>
@@ -262,13 +253,13 @@ export default function PipelineX() {
             whileInView={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.6 }}
             viewport={{ once: true }}
-            className="p-8 rounded-2xl bg-gradient-to-br from-blue-500/10 via-purple-500/10 to-pink-500/10 border border-purple-500/30"
+            className="p-8 rounded-2xl bg-rose-500/5 border border-rose-500/30"
           >
             <div className="flex items-center gap-3 mb-6">
-              <div className="w-10 h-10 rounded-full bg-gradient-to-br from-blue-500 to-purple-500 flex items-center justify-center">
+              <div className="w-10 h-10 rounded-full bg-rose-500 flex items-center justify-center">
                 <CheckCircle className="w-5 h-5 text-white" />
               </div>
-              <h3 className="text-xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-blue-400 to-purple-400">PipelineX Partnership</h3>
+              <h3 className="text-xl font-bold text-rose-500">PipelineX Partnership</h3>
             </div>
             <ul className="space-y-4">
               {[
@@ -298,7 +289,7 @@ export default function PipelineX() {
             viewport={{ once: true }}
             className="text-3xl sm:text-4xl font-bold mb-3"
           >
-            Partners Getting <span className="bg-clip-text text-transparent bg-gradient-to-r from-pink-400 to-purple-400">Real Results</span>
+            Partners Getting <span className="text-rose-500">Real Results</span>
           </motion.h2>
           <p className="text-white/60">Join businesses already dominating their markets</p>
         </div>
@@ -378,8 +369,7 @@ export default function PipelineX() {
       {/* CTA Section */}
       <section className="py-24 px-6 relative">
         <div className="absolute inset-0 overflow-hidden">
-          <div className="absolute top-0 left-1/3 w-96 h-96 bg-purple-500/10 rounded-full blur-3xl"></div>
-          <div className="absolute bottom-0 right-1/3 w-96 h-96 bg-blue-500/10 rounded-full blur-3xl"></div>
+          <div className="absolute top-0 left-1/3 w-96 h-96 bg-rose-500/10 rounded-full blur-3xl"></div>
         </div>
 
         <div className="relative max-w-3xl mx-auto text-center">
@@ -392,7 +382,7 @@ export default function PipelineX() {
           >
             Ready to Own Your
             <br />
-            <span className="bg-clip-text text-transparent bg-gradient-to-r from-blue-400 via-purple-400 to-pink-400">Territory?</span>
+            <span className="text-rose-500">Territory?</span>
           </motion.h2>
           <p className="text-white/60 text-lg mb-8 max-w-xl mx-auto">
             We only partner with one business per industry, per area. Check if your territory is still available.
@@ -467,7 +457,7 @@ export default function PipelineX() {
                       value={formData.name}
                       onChange={(e) => setFormData({ ...formData, name: e.target.value })}
                       required
-                      className="w-full px-4 py-3 bg-white/5 border border-white/10 rounded-xl text-white placeholder:text-white/40 focus:outline-none focus:border-purple-500 transition-colors"
+                      className="w-full px-4 py-3 bg-white/5 border border-white/10 rounded-xl text-white placeholder:text-white/40 focus:outline-none focus:border-rose-500 transition-colors"
                     />
                   </div>
                   <div>
@@ -477,7 +467,7 @@ export default function PipelineX() {
                       value={formData.email}
                       onChange={(e) => setFormData({ ...formData, email: e.target.value })}
                       required
-                      className="w-full px-4 py-3 bg-white/5 border border-white/10 rounded-xl text-white placeholder:text-white/40 focus:outline-none focus:border-purple-500 transition-colors"
+                      className="w-full px-4 py-3 bg-white/5 border border-white/10 rounded-xl text-white placeholder:text-white/40 focus:outline-none focus:border-rose-500 transition-colors"
                     />
                   </div>
                   <div>
@@ -487,7 +477,7 @@ export default function PipelineX() {
                       value={formData.phone}
                       onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
                       required
-                      className="w-full px-4 py-3 bg-white/5 border border-white/10 rounded-xl text-white placeholder:text-white/40 focus:outline-none focus:border-purple-500 transition-colors"
+                      className="w-full px-4 py-3 bg-white/5 border border-white/10 rounded-xl text-white placeholder:text-white/40 focus:outline-none focus:border-rose-500 transition-colors"
                     />
                   </div>
                   <div>
@@ -497,13 +487,13 @@ export default function PipelineX() {
                       value={formData.business}
                       onChange={(e) => setFormData({ ...formData, business: e.target.value })}
                       required
-                      className="w-full px-4 py-3 bg-white/5 border border-white/10 rounded-xl text-white placeholder:text-white/40 focus:outline-none focus:border-purple-500 transition-colors"
+                      className="w-full px-4 py-3 bg-white/5 border border-white/10 rounded-xl text-white placeholder:text-white/40 focus:outline-none focus:border-rose-500 transition-colors"
                     />
                   </div>
                   <button
                     type="submit"
                     disabled={isSubmitting}
-                    className="w-full py-4 bg-gradient-to-r from-blue-500 via-purple-500 to-pink-500 text-white font-bold rounded-xl hover:shadow-lg hover:shadow-purple-500/30 transition-all disabled:opacity-50"
+                    className="w-full py-4 bg-rose-500 text-white font-bold rounded-xl hover:bg-rose-600 transition-all disabled:opacity-50"
                   >
                     {isSubmitting ? "Checking..." : "Check Availability"}
                   </button>
