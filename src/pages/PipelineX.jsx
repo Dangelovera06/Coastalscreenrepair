@@ -482,73 +482,48 @@ export default function PipelineX() {
         </div>
       </section>
 
-      {/* Features Grid */}
-      <section className="py-24 px-6 relative z-10 bg-white/[0.01]">
-        <div className="max-w-7xl mx-auto">
-          <div className="text-center mb-16">
-            <span className="text-red-500 text-sm font-semibold tracking-wider uppercase mb-4 block">What You Get</span>
-            <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-4">
-              Everything You Need to Dominate
-            </h2>
-          </div>
-
-          <div className="grid md:grid-cols-2 gap-6">
-            {features.map((feature, i) => (
-              <motion.div
-                key={i}
-                initial={{ opacity: 0, y: 15, scale: 0.95 }}
-                whileInView={{ opacity: 1, y: 0, scale: 1 }}
-                transition={{ duration: 0.6, delay: i * 0.1, ease: [0.22, 1, 0.36, 1] }}
-                viewport={{ once: true }}
-                className="p-8 rounded-2xl bg-black border border-white/5 hover:border-red-500/30 transition-all group"
-              >
-                <div className="flex items-start justify-between mb-4">
-                  <div className="w-12 h-12 rounded-xl bg-red-500/10 flex items-center justify-center group-hover:bg-red-500/20 transition-colors">
-                    <feature.icon className="w-6 h-6 text-red-500" />
-                  </div>
-                  <span className="text-xs font-semibold text-red-500 bg-red-500/10 px-3 py-1 rounded-full">
-                    {feature.highlight}
-                  </span>
-                </div>
-                <h3 className="text-xl font-bold mb-2">{feature.title}</h3>
-                <p className="text-white/50">{feature.description}</p>
-              </motion.div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* What's Included Section */}
-      <section className="py-24 px-6 relative z-10">
-        <div className="max-w-7xl mx-auto">
-          <div className="text-center mb-16">
+      {/* What's Included - Table Style */}
+      <section className="py-16 px-4 sm:px-6 relative z-10">
+        <div className="max-w-2xl mx-auto">
+          <div className="text-center mb-8">
             <span className="text-red-500 text-sm font-semibold tracking-wider uppercase mb-4 block">What's Included</span>
             <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-4">
               Everything Done For You
             </h2>
-            <p className="text-white/50 max-w-2xl mx-auto">
-              From content creation to lead conversion — we handle it all so you can focus on closing deals.
-            </p>
           </div>
 
-          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
-            {services.map((service, i) => (
-              <motion.div
-                key={i}
-                initial={{ opacity: 0, y: 15, scale: 0.95 }}
-                whileInView={{ opacity: 1, y: 0, scale: 1 }}
-                transition={{ duration: 0.6, delay: i * 0.08, ease: [0.22, 1, 0.36, 1] }}
-                viewport={{ once: true }}
-                className="p-6 rounded-2xl bg-white/[0.02] border border-white/5 hover:border-red-500/30 transition-all group"
-              >
-                <div className="w-12 h-12 rounded-xl bg-red-500/10 flex items-center justify-center mb-4 group-hover:bg-red-500/20 transition-colors">
-                  <service.icon className="w-6 h-6 text-red-500" />
-                </div>
-                <h3 className="text-lg font-bold mb-2">{service.title}</h3>
-                <p className="text-white/50 text-sm">{service.description}</p>
-              </motion.div>
+          <motion.div
+            initial={{ opacity: 0, y: 15, scale: 0.95 }}
+            whileInView={{ opacity: 1, y: 0, scale: 1 }}
+            transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
+            viewport={{ once: true }}
+            className="rounded-2xl overflow-hidden border border-white/10"
+          >
+            {/* Header */}
+            <div className="bg-black/60 px-4 sm:px-6 py-4 border-b border-white/10">
+              <p className="text-white font-medium text-center">Your Complete Lead Generation System</p>
+            </div>
+
+            {/* Items */}
+            {[
+              { bold: "Video Production", rest: "— Scroll-stopping content that converts viewers into leads" },
+              { bold: "Content Creation", rest: "— Professional photos, graphics, and ad creatives" },
+              { bold: "Paid Ads Management", rest: "— Meta & Google ads run and optimized for maximum ROI" },
+              { bold: "CRM Setup", rest: "— Complete configuration so you never lose a lead" },
+              { bold: "Text Automations", rest: "— Instant SMS follow-ups that book appointments" },
+              { bold: "Email Sequences", rest: "— Nurture campaigns that turn cold leads into clients" },
+              { bold: "Exclusive Territory", rest: "— Your market is yours alone, no competitors" },
+              { bold: "AI-Powered Follow-Up", rest: "— Automated systems that engage leads in under 5 seconds" },
+              { bold: "30-Day Guarantee", rest: "— See real leads or we work for free until you do" }
+            ].map((item, i) => (
+              <div key={i} className="bg-black/20 px-4 sm:px-6 py-4 border-b border-white/10 last:border-b-0 flex items-start gap-3">
+                <CheckCircle className="w-5 h-5 text-green-500 flex-shrink-0 mt-0.5" />
+                <p className="text-white/80 text-sm sm:text-base">
+                  <span className="font-semibold text-white">{item.bold}</span> {item.rest}
+                </p>
+              </div>
             ))}
-          </div>
+          </motion.div>
         </div>
       </section>
 
