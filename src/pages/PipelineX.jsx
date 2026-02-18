@@ -314,7 +314,7 @@ export default function PipelineX() {
                 <img
                   src="/pipelinex-hero.png"
                   alt="PipelineX Revenue Dashboard"
-                  className="w-full h-auto rounded-2xl shadow-2xl shadow-red-500/20"
+                  className="w-full h-auto rounded-2xl shadow-2xl shadow-red-500/30 brightness-110"
                 />
                 <Glow variant="top" />
               </div>
@@ -328,7 +328,7 @@ export default function PipelineX() {
         <div className="max-w-7xl mx-auto">
           <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
             {[
-              { value: "$50M+", label: "Revenue Generated for Partners" },
+              { value: "$12M+", label: "Revenue Generated for Partners" },
               { value: "250+", label: "Exclusive Spots Claimed" },
               { value: "300%", label: "Average Lead Increase" },
               { value: "30", label: "Days to First Results" },
