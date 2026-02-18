@@ -1,6 +1,8 @@
 import React, { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { CheckCircle, ArrowRight, Shield, Users, Zap, Star, X, Sparkles } from "lucide-react";
+import { HeroSection } from "@/components/ui/hero-section";
+import { Icons } from "@/components/ui/icons";
 
 const testimonials = [
   {
@@ -193,125 +195,29 @@ export default function PipelineX() {
       </nav>
 
       {/* Hero Section */}
-      <section className="relative pt-40 pb-24 px-6 z-10">
-        <div className="max-w-7xl mx-auto">
-          <div className="grid lg:grid-cols-2 gap-16 items-center">
-            <div>
-              <motion.div
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.6 }}
-              >
-                <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full border border-rose-500/30 bg-rose-500/10 mb-8">
-                  <Sparkles className="w-4 h-4 text-rose-500" />
-                  <span className="text-sm text-rose-400 font-medium">Exclusive Partnership Program</span>
-                </div>
-              </motion.div>
-
-              <motion.h1
-                initial={{ opacity: 0, y: 30 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.8, delay: 0.1 }}
-                className="text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-black leading-[0.9] mb-8"
-              >
-                <span className="block">No More</span>
-                <span className="block relative">
-                  <span className="text-rose-500">Overpriced</span>
-                  <motion.span
-                    className="absolute -bottom-2 left-0 h-1 bg-rose-500 rounded-full"
-                    initial={{ width: 0 }}
-                    animate={{ width: "100%" }}
-                    transition={{ duration: 1, delay: 0.8 }}
-                  />
-                </span>
-                <span className="block text-rose-500">Agencies</span>
-              </motion.h1>
-
-              <motion.p
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.6, delay: 0.2 }}
-                className="text-lg sm:text-xl text-white/50 max-w-lg mb-10 leading-relaxed"
-              >
-                We partner with service-based businesses to generate leads through premium marketing assets — without the fancy fees and without competing for your leads.
-              </motion.p>
-
-              <motion.div
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.6, delay: 0.3 }}
-                className="flex flex-col sm:flex-row items-start gap-4"
-              >
-                <motion.button
-                  onClick={() => setIsFormOpen(true)}
-                  whileHover={{ scale: 1.02 }}
-                  whileTap={{ scale: 0.98 }}
-                  className="group relative px-8 py-4 bg-rose-500 text-white font-bold rounded-full overflow-hidden flex items-center gap-3"
-                >
-                  <span className="relative z-10">Apply Now</span>
-                  <ArrowRight className="w-5 h-5 relative z-10 group-hover:translate-x-1 transition-transform" />
-                  <motion.div
-                    className="absolute inset-0 bg-rose-600"
-                    initial={{ scale: 0, opacity: 0 }}
-                    whileHover={{ scale: 1, opacity: 1 }}
-                    transition={{ duration: 0.3 }}
-                    style={{ borderRadius: "9999px" }}
-                  />
-                </motion.button>
-                <div className="flex items-center gap-3 sm:py-4">
-                  <div className="flex -space-x-2">
-                    {[1,2,3,4].map((i) => (
-                      <div key={i} className="w-8 h-8 rounded-full bg-white/10 border-2 border-black" />
-                    ))}
-                  </div>
-                  <span className="text-sm text-white/40">500+ partners</span>
-                </div>
-              </motion.div>
-            </div>
-
-            {/* Stats Cards */}
-            <motion.div
-              initial={{ opacity: 0, x: 50 }}
-              animate={{ opacity: 1, x: 0 }}
-              transition={{ duration: 0.8, delay: 0.4 }}
-              className="relative hidden lg:block"
-            >
-              <div className="relative">
-                {/* Main Card */}
-                <div className="p-8 rounded-3xl bg-white/5 border border-white/10 backdrop-blur-xl">
-                  <div className="grid grid-cols-2 gap-6">
-                    <div className="p-6 rounded-2xl bg-white/5">
-                      <p className="text-5xl font-black text-rose-500 mb-2">300%</p>
-                      <p className="text-white/50 text-sm">Avg. Lead Increase</p>
-                    </div>
-                    <div className="p-6 rounded-2xl bg-white/5">
-                      <p className="text-5xl font-black text-white mb-2">30</p>
-                      <p className="text-white/50 text-sm">Days to Results</p>
-                    </div>
-                    <div className="p-6 rounded-2xl bg-white/5">
-                      <p className="text-5xl font-black text-white mb-2">$0</p>
-                      <p className="text-white/50 text-sm">Hidden Fees</p>
-                    </div>
-                    <div className="p-6 rounded-2xl bg-white/5">
-                      <p className="text-5xl font-black text-rose-500 mb-2">1</p>
-                      <p className="text-white/50 text-sm">Per Territory</p>
-                    </div>
-                  </div>
-                </div>
-                
-                {/* Floating Badge */}
-                <motion.div
-                  animate={{ y: [0, -10, 0] }}
-                  transition={{ duration: 3, repeat: Infinity, ease: "easeInOut" }}
-                  className="absolute -top-6 -right-6 px-4 py-2 rounded-full bg-rose-500 text-white text-sm font-bold shadow-lg shadow-rose-500/30"
-                >
-                  Limited Spots
-                </motion.div>
-              </div>
-            </motion.div>
-          </div>
-        </div>
-      </section>
+      <div className="relative pt-24 z-10">
+        <HeroSection
+          dark
+          badge={{
+            text: "Exclusive Partnership Program",
+          }}
+          title="No More Overpriced Agencies"
+          description="We partner with service-based businesses to generate leads through premium marketing assets — without the fancy fees and without competing for your leads."
+          actions={[
+            {
+              text: "Apply Now",
+              variant: "glow",
+              icon: <ArrowRight className="w-5 h-5" />,
+              onClick: () => setIsFormOpen(true),
+            },
+          ]}
+          image={{
+            src: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=1248&q=80",
+            alt: "Dashboard Preview",
+          }}
+          onActionClick={() => setIsFormOpen(true)}
+        />
+      </div>
 
       {/* Scrolling Testimonials - Two Rows */}
       <section className="py-20 z-10 relative overflow-hidden">
