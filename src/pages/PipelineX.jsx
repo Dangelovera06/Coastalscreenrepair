@@ -108,11 +108,12 @@ export default function PipelineX() {
       {/* Navigation */}
       <nav className="fixed top-0 left-0 right-0 z-50 backdrop-blur-xl bg-black/80 border-b border-white/10">
         <div className="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
-          <div className="flex items-center gap-2">
-            <div className="w-8 h-8 rounded-lg bg-gradient-to-br from-blue-500 via-purple-500 to-pink-500 flex items-center justify-center">
-              <span className="text-white font-black text-sm">X</span>
-            </div>
-            <span className="text-xl font-bold tracking-tight">Pipeline<span className="bg-clip-text text-transparent bg-gradient-to-r from-blue-400 to-purple-400">X</span></span>
+          <div className="flex items-center">
+            <img 
+              src="/pipelinex-logo.png" 
+              alt="PipelineX" 
+              className="h-8 sm:h-10 w-auto invert"
+            />
           </div>
           <button
             onClick={() => setIsFormOpen(true)}
@@ -408,11 +409,12 @@ export default function PipelineX() {
       {/* Footer */}
       <footer className="py-12 px-6 border-t border-white/10">
         <div className="max-w-6xl mx-auto flex flex-col md:flex-row items-center justify-between gap-6">
-          <div className="flex items-center gap-2">
-            <div className="w-8 h-8 rounded-lg bg-gradient-to-br from-blue-500 via-purple-500 to-pink-500 flex items-center justify-center">
-              <span className="text-white font-black text-sm">X</span>
-            </div>
-            <span className="text-lg font-bold">PipelineX</span>
+          <div className="flex items-center">
+            <img 
+              src="/pipelinex-logo.png" 
+              alt="PipelineX" 
+              className="h-8 w-auto invert"
+            />
           </div>
           <div className="flex gap-6 text-sm text-white/50">
             <a href="#" className="hover:text-white transition-colors">Privacy</a>
