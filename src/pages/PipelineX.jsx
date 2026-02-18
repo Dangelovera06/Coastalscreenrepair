@@ -308,18 +308,16 @@ export default function PipelineX() {
               initial={{ opacity: 0, y: 40 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.5 }}
-              className="relative"
+              className="relative flex justify-center"
             >
-              <MockupFrame size="small" className="mx-auto">
-                <Mockup type="responsive">
-                  <img
-                    src="/pipelinex-hero.png"
-                    alt="PipelineX Revenue Dashboard"
-                    className="w-full h-auto"
-                  />
-                </Mockup>
-              </MockupFrame>
-              <Glow variant="top" />
+              <div className="relative max-w-4xl w-full">
+                <img
+                  src="/pipelinex-hero.png"
+                  alt="PipelineX Revenue Dashboard"
+                  className="w-full h-auto rounded-2xl shadow-2xl shadow-red-500/20"
+                />
+                <Glow variant="top" />
+              </div>
             </motion.div>
           </div>
         </div>
