@@ -385,6 +385,68 @@ export default function PipelineX() {
         </div>
       </section>
 
+      {/* Old Way vs New Way Comparison Table */}
+      <section className="py-16 px-4 sm:px-6 relative z-10">
+        <div className="max-w-2xl mx-auto">
+          <motion.div
+            initial={{ opacity: 0, y: 15, scale: 0.95 }}
+            whileInView={{ opacity: 1, y: 0, scale: 1 }}
+            transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
+            viewport={{ once: true }}
+            className="rounded-2xl overflow-hidden border border-white/10"
+          >
+            {/* Header Row */}
+            <div className="grid grid-cols-2">
+              <div className="bg-black/60 px-4 sm:px-6 py-4 border-b border-r border-white/10">
+                <p className="text-white/60 font-medium text-center">The Old Way</p>
+              </div>
+              <div className="bg-black/60 px-4 sm:px-6 py-4 border-b border-white/10">
+                <p className="text-white font-medium text-center">The New Way</p>
+              </div>
+            </div>
+
+            {/* Comparison Rows */}
+            {[
+              {
+                old: { bold: "Expensive agencies", rest: "that drain your budget monthly" },
+                new: { bold: "Affordable partnership", rest: "with transparent pricing" }
+              },
+              {
+                old: { bold: "Generic content", rest: "that looks like everyone else's" },
+                new: { bold: "Custom cinematic content", rest: "that stops the scroll" }
+              },
+              {
+                old: { bold: "Shared leads", rest: "that go to your competitors too" },
+                new: { bold: "Exclusive leads", rest: "that are 100% yours" }
+              },
+              {
+                old: { bold: "Chasing leads", rest: "with manual follow-ups" },
+                new: { bold: "Automated follow-up", rest: "that books while you sleep" }
+              },
+              {
+                old: { bold: "Months to see results", rest: "with no guarantees" },
+                new: { bold: "Results in 30 days", rest: "or we keep working for free" }
+              }
+            ].map((row, i) => (
+              <div key={i} className="grid grid-cols-2">
+                <div className="bg-black/40 px-4 sm:px-6 py-5 border-b border-r border-white/10 flex items-start gap-3">
+                  <X className="w-5 h-5 text-red-500 flex-shrink-0 mt-0.5" />
+                  <p className="text-white/60 text-sm sm:text-base">
+                    <span className="font-semibold text-white/80">{row.old.bold}</span> {row.old.rest}
+                  </p>
+                </div>
+                <div className="bg-black/20 px-4 sm:px-6 py-5 border-b border-white/10 flex items-start gap-3">
+                  <CheckCircle className="w-5 h-5 text-green-500 flex-shrink-0 mt-0.5" />
+                  <p className="text-white/80 text-sm sm:text-base">
+                    <span className="font-semibold text-white">{row.new.bold}</span> {row.new.rest}
+                  </p>
+                </div>
+              </div>
+            ))}
+          </motion.div>
+        </div>
+      </section>
+
       {/* Our Framework */}
       <section className="py-24 px-6 relative z-10">
         <div className="max-w-7xl mx-auto">
