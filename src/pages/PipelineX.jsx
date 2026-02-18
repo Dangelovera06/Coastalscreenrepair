@@ -311,12 +311,12 @@ export default function PipelineX() {
               className="relative flex justify-center"
             >
               <div className="relative max-w-4xl w-full">
+                <Glow variant="center" className="-z-10" />
                 <img
                   src="/pipelinex-hero.png"
                   alt="PipelineX Revenue Dashboard"
-                  className="w-full h-auto rounded-2xl shadow-2xl shadow-red-500/30 brightness-110"
+                  className="relative z-10 w-full h-auto rounded-2xl shadow-2xl shadow-red-500/30"
                 />
-                <Glow variant="top" />
               </div>
             </motion.div>
           </div>
