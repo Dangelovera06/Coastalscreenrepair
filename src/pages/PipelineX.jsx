@@ -83,6 +83,8 @@ const steps = [
   }
 ];
 
+const wistiaVideoIds = ['uclsx16sij'];
+
 const features = [
   {
     icon: Shield,
@@ -183,6 +185,48 @@ const comparisonData = {
   ]
 };
 
+// Wistia Player Component
+function WistiaPlayer({ videoId }) {
+  const containerRef = React.useRef(null);
+
+  useEffect(() => {
+    if (containerRef.current) {
+      // Create the custom element
+      const player = document.createElement('wistia-player');
+      player.setAttribute('media-id', videoId);
+      player.setAttribute('aspect', '0.5625');
+      
+      // Add styles
+      const style = document.createElement('style');
+      style.textContent = `
+        wistia-player[media-id='${videoId}']:not(:defined) { 
+          background: center / contain no-repeat url('https://fast.wistia.com/embed/medias/${videoId}/swatch'); 
+          display: block; 
+          filter: blur(5px); 
+          padding-top:177.78%; 
+        }
+      `;
+      document.head.appendChild(style);
+      
+      containerRef.current.appendChild(player);
+      
+      return () => {
+        if (containerRef.current && player.parentNode) {
+          player.parentNode.removeChild(player);
+        }
+      };
+    }
+  }, [videoId]);
+
+  return (
+    <div 
+      ref={containerRef}
+      className="relative rounded-lg overflow-hidden bg-black/20 border border-white/10 w-full"
+      style={{ aspectRatio: '16/9' }}
+    />
+  );
+}
+
 export default function PipelineX() {
   const [isFormOpen, setIsFormOpen] = useState(false);
   const [formData, setFormData] = useState({ name: '', email: '', phone: '', business: '' });
@@ -205,6 +249,25 @@ export default function PipelineX() {
       let meta = document.querySelector(`meta[property="${name}"]`) || document.querySelector(`meta[name="${name}"]`);
       if (meta) {
         meta.setAttribute('content', content);
+      }
+    });
+
+    // Load Wistia scripts
+    if (!document.querySelector('script[src*="wistia.com/player.js"]')) {
+      const playerScript = document.createElement('script');
+      playerScript.src = 'https://fast.wistia.com/player.js';
+      playerScript.async = true;
+      document.head.appendChild(playerScript);
+    }
+
+    // Load embed scripts for each video
+    wistiaVideoIds.forEach((videoId) => {
+      if (!document.querySelector(`script[src*="wistia.com/embed/${videoId}"]`)) {
+        const embedScript = document.createElement('script');
+        embedScript.src = `https://fast.wistia.com/embed/${videoId}.js`;
+        embedScript.async = true;
+        embedScript.type = 'module';
+        document.head.appendChild(embedScript);
       }
     });
   }, []);
@@ -589,6 +652,36 @@ export default function PipelineX() {
                   </li>
                 ))}
               </ul>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Video Gallery - Scrollable */}
+      <section className="py-16 px-4 sm:px-6 relative z-10 bg-black">
+        <div className="max-w-7xl mx-auto">
+          <div className="text-center mb-8">
+            <span className="text-red-500 text-sm font-semibold tracking-wider uppercase mb-4 block">Video Gallery</span>
+            <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-4">
+              See It In Action
+            </h2>
+          </div>
+
+          <div className="overflow-x-auto pb-6 -mx-4 sm:mx-0">
+            <div className="flex gap-6 px-4 sm:px-0" style={{ scrollSnapType: 'x mandatory', WebkitOverflowScrolling: 'touch' }}>
+              {wistiaVideoIds.map((videoId, i) => (
+                <motion.div
+                  key={i}
+                  initial={{ opacity: 0, scale: 0.95 }}
+                  whileInView={{ opacity: 1, scale: 1 }}
+                  transition={{ duration: 0.6, delay: i * 0.1, ease: [0.22, 1, 0.36, 1] }}
+                  viewport={{ once: true }}
+                  className="flex-shrink-0 w-[90vw] sm:w-[500px] md:w-[600px]"
+                  style={{ scrollSnapAlign: 'start' }}
+                >
+                  <WistiaPlayer videoId={videoId} />
+                </motion.div>
+              ))}
             </div>
           </div>
         </div>
