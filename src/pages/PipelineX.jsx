@@ -221,8 +221,7 @@ function WistiaPlayer({ videoId }) {
   return (
     <div 
       ref={containerRef}
-      className="relative rounded-lg overflow-hidden bg-black/20 border border-white/10 w-full"
-      style={{ aspectRatio: '16/9' }}
+      className="relative rounded-2xl overflow-hidden bg-black/20 border border-white/10 w-full h-full"
     />
   );
 }
@@ -668,7 +667,7 @@ export default function PipelineX() {
           </div>
 
           <div className="overflow-x-auto pb-6 -mx-4 sm:mx-0">
-            <div className="flex gap-6 px-4 sm:px-0" style={{ scrollSnapType: 'x mandatory', WebkitOverflowScrolling: 'touch' }}>
+            <div className="flex gap-8 px-4 sm:px-8 justify-start sm:justify-center" style={{ scrollSnapType: 'x mandatory', WebkitOverflowScrolling: 'touch' }}>
               {wistiaVideoIds.map((videoId, i) => (
                 <motion.div
                   key={i}
@@ -676,8 +675,8 @@ export default function PipelineX() {
                   whileInView={{ opacity: 1, scale: 1 }}
                   transition={{ duration: 0.6, delay: i * 0.1, ease: [0.22, 1, 0.36, 1] }}
                   viewport={{ once: true }}
-                  className="flex-shrink-0 w-[90vw] sm:w-[500px] md:w-[600px]"
-                  style={{ scrollSnapAlign: 'start' }}
+                  className="flex-shrink-0"
+                  style={{ scrollSnapAlign: 'center', width: '300px', height: '533px' }}
                 >
                   <WistiaPlayer videoId={videoId} />
                 </motion.div>
