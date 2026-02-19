@@ -666,20 +666,30 @@ export default function PipelineX() {
             </h2>
           </div>
 
-          <div className="overflow-x-auto pb-6 -mx-4 sm:mx-0">
-            <div className="flex gap-8 px-4 sm:px-8 justify-start sm:justify-center" style={{ scrollSnapType: 'x mandatory', WebkitOverflowScrolling: 'touch' }}>
-              {wistiaVideoIds.map((videoId, i) => (
-                <motion.div
+          <div className="overflow-hidden -mx-4 sm:mx-0">
+            <style dangerouslySetInnerHTML={{
+              __html: `
+                @keyframes scroll-videos {
+                  0% { transform: translateX(0); }
+                  100% { transform: translateX(-50%); }
+                }
+                .video-scroll-track {
+                  animation: scroll-videos 40s linear infinite;
+                }
+                .video-scroll-track:hover {
+                  animation-play-state: paused;
+                }
+              `
+            }} />
+            <div className="video-scroll-track flex gap-8" style={{ width: 'fit-content' }}>
+              {[...wistiaVideoIds, ...wistiaVideoIds].map((videoId, i) => (
+                <div
                   key={i}
-                  initial={{ opacity: 0, scale: 0.95 }}
-                  whileInView={{ opacity: 1, scale: 1 }}
-                  transition={{ duration: 0.6, delay: i * 0.1, ease: [0.22, 1, 0.36, 1] }}
-                  viewport={{ once: true }}
                   className="flex-shrink-0"
-                  style={{ scrollSnapAlign: 'center', width: '300px', height: '533px' }}
+                  style={{ width: '300px', height: '533px' }}
                 >
                   <WistiaPlayer videoId={videoId} />
-                </motion.div>
+                </div>
               ))}
             </div>
           </div>
