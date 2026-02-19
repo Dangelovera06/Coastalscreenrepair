@@ -83,7 +83,7 @@ const steps = [
   }
 ];
 
-const wistiaVideoIds = ['uclsx16sij', 'd80ddv8amb', 'nvxc00kqvr'];
+const wistiaVideoIds = ['uclsx16sij', 'd80ddv8amb', 'nvxc00kqvr', 'm0zr5i9s4d'];
 
 const features = [
   {
