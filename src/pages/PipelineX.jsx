@@ -666,7 +666,10 @@ export default function PipelineX() {
             </h2>
           </div>
 
-          <div className="overflow-hidden -mx-4 sm:mx-0">
+          <div 
+            className="overflow-x-auto -mx-4 sm:mx-0 pb-4 scrollbar-hide"
+            style={{ WebkitOverflowScrolling: 'touch' }}
+          >
             <style dangerouslySetInnerHTML={{
               __html: `
                 @keyframes scroll-videos {
@@ -676,12 +679,20 @@ export default function PipelineX() {
                 .video-scroll-track {
                   animation: scroll-videos 40s linear infinite;
                 }
-                .video-scroll-track:hover {
+                .video-scroll-track:hover,
+                .video-scroll-track:active {
                   animation-play-state: paused;
+                }
+                .scrollbar-hide::-webkit-scrollbar {
+                  display: none;
+                }
+                .scrollbar-hide {
+                  -ms-overflow-style: none;
+                  scrollbar-width: none;
                 }
               `
             }} />
-            <div className="video-scroll-track flex gap-8" style={{ width: 'fit-content' }}>
+            <div className="video-scroll-track flex gap-8 px-4 sm:px-8" style={{ width: 'fit-content' }}>
               {[...wistiaVideoIds, ...wistiaVideoIds].map((videoId, i) => (
                 <div
                   key={i}
