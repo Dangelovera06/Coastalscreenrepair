@@ -11,7 +11,7 @@ export default function Home() {
             <img src="/coastal-logo.png" alt="Coastal Screen Repair" className="h-8 w-auto" />
           </a>
           <a
-            href="tel:+1234567890"
+            href="tel:+15612290080"
             className="inline-flex items-center gap-2 bg-[#1e3a5f] text-white text-sm font-semibold px-5 py-2.5 rounded-full hover:bg-[#162d4a] transition-colors"
           >
             <svg xmlns="http://www.w3.org/2000/svg" className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
@@ -47,7 +47,7 @@ export default function Home() {
 
           <div className="mt-8 flex flex-col sm:flex-row items-center justify-center gap-4 w-full">
             <a
-              href="tel:+1234567890"
+              href="tel:+15612290080"
               className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-10 py-4 bg-white text-[#1e3a5f] font-bold text-base rounded-lg hover:bg-neutral-100 transition-colors shadow-xl"
             >
               <svg xmlns="http://www.w3.org/2000/svg" className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
@@ -200,7 +200,7 @@ export default function Home() {
           </div>
 
           <a
-            href="tel:+1234567890"
+            href="tel:+15612290080"
             className="mt-10 inline-flex items-center justify-center gap-2 px-10 py-4 bg-[#1e3a5f] text-white font-bold text-base rounded-lg hover:bg-[#162d4a] transition-colors shadow-lg"
           >
             Get a Free Estimate on Any Service
@@ -221,7 +221,7 @@ export default function Home() {
             We'll come out, look at the damage, and give you a clear written quote — completely free. No surprises, no hidden fees. You decide if you want to move forward.
           </p>
           <a
-            href="tel:+1234567890"
+            href="tel:+15612290080"
             className="mt-10 inline-flex items-center justify-center gap-3 px-10 py-4 bg-[#1e3a5f] text-white font-bold text-lg rounded-lg hover:bg-[#162d4a] transition-colors shadow-lg"
           >
             <svg xmlns="http://www.w3.org/2000/svg" className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
@@ -285,7 +285,7 @@ export default function Home() {
             Call us today. Free estimate, no obligation, same-week service in Palm Beach County.
           </p>
           <a
-            href="tel:+1234567890"
+            href="tel:+15612290080"
             className="mt-8 inline-flex items-center justify-center gap-3 px-10 py-4 bg-white text-[#1e3a5f] font-bold text-lg rounded-lg hover:bg-neutral-100 transition-colors shadow-xl"
           >
             <svg xmlns="http://www.w3.org/2000/svg" className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
@@ -304,8 +304,8 @@ export default function Home() {
           <p className="text-neutral-400 text-sm">
             © {new Date().getFullYear()} Coastal Screen Repair · Palm Beach, FL · Outdoor screen enclosure repair only.
           </p>
-          <a href="tel:+1234567890" className="text-[#1e3a5f] font-bold text-sm hover:underline">
-            (123) 456-7890
+          <a href="tel:+15612290080" className="text-[#1e3a5f] font-bold text-sm hover:underline">
+            (561) 229-0080
           </a>
         </div>
       </footer>
