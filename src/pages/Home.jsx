@@ -87,6 +87,55 @@ export default function Home() {
         </div>
       </section>
 
+      {/* ── GUARANTEES ──────────────────────────────────────────── */}
+      <section className="py-16 bg-white">
+        <div className="max-w-4xl mx-auto px-4 sm:px-6 text-center">
+          <h2 className="text-3xl sm:text-4xl font-extrabold text-neutral-900 mb-3">Our Guarantees</h2>
+          <p className="text-neutral-500 text-lg mb-12">We stand behind every job — no exceptions.</p>
+          <div className="grid sm:grid-cols-2 gap-6">
+
+            {/* Quality Guarantee */}
+            <div className="relative bg-[#1e3a5f] rounded-2xl p-8 text-white text-center overflow-hidden">
+              <div className="absolute -top-6 -right-6 w-28 h-28 bg-white/5 rounded-full" />
+              <div className="absolute -bottom-8 -left-8 w-36 h-36 bg-white/5 rounded-full" />
+              <div className="relative z-10">
+                <div className="w-16 h-16 mx-auto mb-5 rounded-full bg-white/15 flex items-center justify-center text-3xl">
+                  🏅
+                </div>
+                <div className="text-xs font-bold uppercase tracking-widest text-white/60 mb-2">We Guarantee</div>
+                <h3 className="text-2xl font-extrabold mb-3">100% Quality</h3>
+                <p className="text-white/80 text-sm leading-relaxed">
+                  Every repair is done right or we come back and fix it — free. We use only premium screen mesh and materials built to handle Florida weather. If you're not fully satisfied, we make it right. Period.
+                </p>
+                <div className="mt-5 inline-block border border-white/30 rounded-full px-4 py-1.5 text-xs font-semibold text-white/90">
+                  Satisfaction Guaranteed ✓
+                </div>
+              </div>
+            </div>
+
+            {/* Best Price Guarantee */}
+            <div className="relative bg-white border-2 border-[#1e3a5f] rounded-2xl p-8 text-center overflow-hidden">
+              <div className="absolute -top-6 -right-6 w-28 h-28 bg-[#1e3a5f]/5 rounded-full" />
+              <div className="absolute -bottom-8 -left-8 w-36 h-36 bg-[#1e3a5f]/5 rounded-full" />
+              <div className="relative z-10">
+                <div className="w-16 h-16 mx-auto mb-5 rounded-full bg-[#1e3a5f]/10 flex items-center justify-center text-3xl">
+                  💰
+                </div>
+                <div className="text-xs font-bold uppercase tracking-widest text-neutral-400 mb-2">We Guarantee</div>
+                <h3 className="text-2xl font-extrabold text-[#1e3a5f] mb-3">Best Pricing</h3>
+                <p className="text-neutral-600 text-sm leading-relaxed">
+                  We offer the most competitive pricing in Palm Beach County. Got a lower written quote from another licensed screen repair company? Show us and we'll beat it. No hidden fees, no surprises — ever.
+                </p>
+                <div className="mt-5 inline-block border border-[#1e3a5f]/30 rounded-full px-4 py-1.5 text-xs font-semibold text-[#1e3a5f]">
+                  We'll Beat Any Written Quote ✓
+                </div>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </section>
+
       {/* ── WHAT WE DO ──────────────────────────────────────────── */}
       <section id="what-we-do" className="py-20 bg-white">
         <div className="max-w-5xl mx-auto px-4 sm:px-6 text-center">
