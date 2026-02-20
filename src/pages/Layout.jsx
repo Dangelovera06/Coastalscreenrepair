@@ -5,7 +5,7 @@ export default function Layout({ children, currentPageName }) {
     const location = useLocation();
     
     // Pages that should NOT show the floating header
-    const noHeaderPages = ['MedSpaOffer', 'medspa', 'System', 'system', 'Offer', 'offer'];
+    const noHeaderPages = ['Home', 'MedSpaOffer', 'medspa', 'System', 'system', 'Offer', 'offer'];
     const hideHeader = noHeaderPages.includes(currentPageName) || 
                        location.pathname.toLowerCase().includes('medspa') ||
                        location.pathname.toLowerCase().includes('system') ||
