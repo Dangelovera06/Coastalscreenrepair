@@ -160,6 +160,54 @@ export default function Home() {
         </div>
       </section>
 
+      {/* ── PROFESSIONAL SERVICES ───────────────────────────────── */}
+      <section className="py-20 bg-neutral-950 text-white">
+        <div className="max-w-2xl mx-auto px-4 sm:px-6 text-center">
+          <h2 className="text-3xl sm:text-4xl font-extrabold text-white mb-3">Professional Services</h2>
+          <p className="text-neutral-400 text-lg mb-10">Everything we do — done right, every time.</p>
+
+          <div className="bg-neutral-900 border border-neutral-800 rounded-2xl overflow-hidden text-left">
+            <div className="px-6 py-4 border-b border-neutral-800 text-center">
+              <p className="text-white font-bold text-base">Your Complete Screen Repair Solution</p>
+            </div>
+            {[
+              { title: "Screen Repair", desc: "Torn, sagging, or damaged screen panels replaced with premium mesh" },
+              { title: "Replace Rusted Screws", desc: "Full fastener inspection and replacement to keep your enclosure solid" },
+              { title: "Pool & Patio Aluminum Repair", desc: "Bent or damaged aluminum frames straightened and restored" },
+              { title: "Kick Plate Installation", desc: "Heavy-duty kick plates added to protect the bottom of your screens" },
+              { title: "Privacy Screen", desc: "Upgrade to privacy mesh that blocks views without blocking airflow" },
+              { title: "Enclosure Reinforcement", desc: "Structural reinforcement so your enclosure handles Florida storms" },
+              { title: "Screen Door Replacement / Repair", desc: "Sliding, hinged, or pet-resistant doors repaired or fully replaced" },
+              { title: "Screen Windows", desc: "Window screen repair and re-screening for the whole enclosure" },
+              { title: "Restoration", desc: "Full enclosure restoration — like-new results at a fraction of replacement cost" },
+            ].map((item, i, arr) => (
+              <div
+                key={item.title}
+                className={`flex items-start gap-4 px-6 py-5 ${i < arr.length - 1 ? "border-b border-neutral-800" : ""}`}
+              >
+                <div className="flex-shrink-0 mt-0.5">
+                  <svg className="w-6 h-6 text-green-500" viewBox="0 0 24 24" fill="none">
+                    <circle cx="12" cy="12" r="11" stroke="currentColor" strokeWidth="1.5" />
+                    <path d="M7.5 12.5l3 3 6-6" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
+                  </svg>
+                </div>
+                <div>
+                  <span className="font-bold text-white text-sm">{item.title}</span>
+                  <span className="text-neutral-400 text-sm"> — {item.desc}</span>
+                </div>
+              </div>
+            ))}
+          </div>
+
+          <a
+            href="tel:+1234567890"
+            className="mt-10 inline-flex items-center justify-center gap-2 px-10 py-4 bg-white text-neutral-900 font-bold text-base rounded-lg hover:bg-neutral-100 transition-colors shadow-lg"
+          >
+            Get a Free Estimate on Any Service
+          </a>
+        </div>
+      </section>
+
       {/* ── FREE ESTIMATES ──────────────────────────────────────── */}
       <section className="py-20 bg-neutral-50 border-y border-neutral-200">
         <div className="max-w-3xl mx-auto px-4 sm:px-6 text-center">
