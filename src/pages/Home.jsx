@@ -161,14 +161,14 @@ export default function Home() {
       </section>
 
       {/* ── PROFESSIONAL SERVICES ───────────────────────────────── */}
-      <section className="py-20 bg-neutral-950 text-white">
+      <section className="py-20 bg-white">
         <div className="max-w-2xl mx-auto px-4 sm:px-6 text-center">
-          <h2 className="text-3xl sm:text-4xl font-extrabold text-white mb-3">Professional Services</h2>
-          <p className="text-neutral-400 text-lg mb-10">Everything we do — done right, every time.</p>
+          <h2 className="text-3xl sm:text-4xl font-extrabold text-neutral-900 mb-3">Professional Services</h2>
+          <p className="text-neutral-500 text-lg mb-10">Everything we do — done right, every time.</p>
 
-          <div className="bg-neutral-900 border border-neutral-800 rounded-2xl overflow-hidden text-left">
-            <div className="px-6 py-4 border-b border-neutral-800 text-center">
-              <p className="text-white font-bold text-base">Your Complete Screen Repair Solution</p>
+          <div className="bg-white border border-neutral-200 rounded-2xl overflow-hidden text-left shadow-sm">
+            <div className="px-6 py-4 border-b border-neutral-200 text-center bg-neutral-50">
+              <p className="text-neutral-900 font-bold text-base">Your Complete Screen Repair Solution</p>
             </div>
             {[
               { title: "Screen Repair", desc: "Torn, sagging, or damaged screen panels replaced with premium mesh" },
@@ -183,7 +183,7 @@ export default function Home() {
             ].map((item, i, arr) => (
               <div
                 key={item.title}
-                className={`flex items-start gap-4 px-6 py-5 ${i < arr.length - 1 ? "border-b border-neutral-800" : ""}`}
+                className={`flex items-start gap-4 px-6 py-5 ${i < arr.length - 1 ? "border-b border-neutral-200" : ""}`}
               >
                 <div className="flex-shrink-0 mt-0.5">
                   <svg className="w-6 h-6 text-green-500" viewBox="0 0 24 24" fill="none">
@@ -192,8 +192,8 @@ export default function Home() {
                   </svg>
                 </div>
                 <div>
-                  <span className="font-bold text-white text-sm">{item.title}</span>
-                  <span className="text-neutral-400 text-sm"> — {item.desc}</span>
+                  <span className="font-bold text-neutral-900 text-sm">{item.title}</span>
+                  <span className="text-neutral-500 text-sm"> — {item.desc}</span>
                 </div>
               </div>
             ))}
@@ -201,7 +201,7 @@ export default function Home() {
 
           <a
             href="tel:+1234567890"
-            className="mt-10 inline-flex items-center justify-center gap-2 px-10 py-4 bg-white text-neutral-900 font-bold text-base rounded-lg hover:bg-neutral-100 transition-colors shadow-lg"
+            className="mt-10 inline-flex items-center justify-center gap-2 px-10 py-4 bg-[#1e3a5f] text-white font-bold text-base rounded-lg hover:bg-[#162d4a] transition-colors shadow-lg"
           >
             Get a Free Estimate on Any Service
           </a>
